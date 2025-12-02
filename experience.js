@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "images/Bayes.png"
     },
     {
-      title: "Finite Element Wave Propagation Suite",
-      link: "/solutions/wave.html",
-      description: "Python Package for Acoustic, Electromagnetic and Elastodynamic Wave Models",
-      image: "images/chemical_tile.svg"
+      title: "Optimal Control of Chemical Reactors",
+      link: "/solutions/chemical.html",
+      description: "PDE Constrained Optimization for Optimal Control of a Gas Reactor",
+      image: "images/chemical_tile.png"
     },
   ];
 

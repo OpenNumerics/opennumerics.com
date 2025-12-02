@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Finite Element Wave Propagation Suite",
       link: "/solutions/wave.html",
       description: "Python Package for Acoustic, Electromagnetic and Elastodynamic Wave Models",
-      image: "images/wave.png"
+      image: "images/chemical_tile.svg"
     },
   ];
 

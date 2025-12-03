@@ -12,6 +12,19 @@
 
     gtag('config', 'G-HYR12B0NWT');
   </script>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script"
+          async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 
 <body>
@@ -37,7 +50,7 @@
     
     <p class="intro-text">
       In this project, we optimized a gaseous CO-to-O₂ converter. The physical setup is shown in the figure above. 
-      On the left, a fixed mixture of CO and O₂ enters the reactor at a specified inlet temperature T_{\text{in}}. 
+      On the left, a fixed mixture of CO and O₂ enters the reactor at a specified inlet temperature $T_{\text{in}}$. 
       As the gas travels through the catalyzed region, CO is gradually converted into O₂. 
       The objective is to minimize the CO concentration at the outlet. Increasing the inlet temperature accelerates the reaction and improves conversion. 
       However, beyond a critical threshold, the system exhibits thermal runaway: the reaction releases heat, the temperature rises, which accelerates the reaction even further, leading to a sharp temperature spike. 
@@ -50,7 +63,27 @@
       <img src="/images/chemical/scurve.png" alt="Hysteresis Curve">
     </div>
 
-    <p class="intro-text">This suite includes automated mesh importing, seamless integration with a parameter and storage database, and built-in support for automatic hp-refinement analysis
+    <p class="intro-text">At Open Numerics, we built a controller that maximizes CO conversion while keeping the reactor safely away from runaway conditions. 
+      Our control input is the catalyst concentration $a(z)$, which determines how rapidly the reaction proceeds along the reactor. 
+      The reactor's temperature and species profiles are governed by first-principles PDEs describing transport, heat release, and reaction kinetics. 
+      These physics-based equations serve as constraints in the optimization, ensuring that every proposed solution respects the true thermochemical behavior of the system.
+    </p>
+
+    <p class="intro-text">
+      We solve the optimization problem
+      
+      $$\ min_{a} J(a) = -\frac{\mathrm{CO}_{\text{out}}}{\mathrm{CO}_{\text{in}}} \;+\; \gamma \int \max(T(z) - T_{\text{in}}, 0)\, dz, $$ 
+
+      balancing high conversion with strict temperature control.
+    </p>
+
+    <p class="intro-text">
+      Our approach combines high-fidelity physics with cutting-edge optimization techniques. We use advanced finite-element PDE solvers and adjoint-based gradients to optimize controls efficiently and reliably, even in high-dimensional design spaces. 
+      The result is a solution that is optimal, physically interpretable, robust to uncertainty, and fully aligned with engineering safety limits by staying away from the upper branch.
+    </p>
+
+    <p class="intro-text">
+      <strong>For clients, this means safer operation, higher yield, larger profit margins, and the ability to explore design and control strategies digitally—before ever touching the physical reactor.</strong>
     </p>
   </div>
 

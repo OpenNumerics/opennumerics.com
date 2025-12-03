@@ -20,19 +20,35 @@
 
   <section id="wave" class="panel beige">
   <div class="panel-content">
-    <h2>Finite Element Wave Propagation Suite in Python</h2>
-    <p class="intro-text">Understanding how waves travel through air, solids, and electromagnetic fields is fundamental to modern engineering, from wireless communication to acoustic design and structural analysis. These phenomena include acoustic waves in air, electromagnetic waves in space and matter, and elastodynamic waves propagating through solid materials, often coupled with the deformations they induce.</p>
+    <h2>PDE-Constrained Control of Chemical Reactors</h2>
+    <p class="intro-text">Modern chemical reactors are governed by complex physics and chemistry: heat transfer, fluid flow, and reaction kinetics interact across the entire reactor volume in highly nonlinear ways. 
+      These coupled effects determine conversion, yield, selectivity, energy consumption, and overall stability. 
+      Small changes in inlet concentrations, temperatures or catalyst distribution can lead to large variations in output and (financial) yield.</p>
 
-    <p class="intro-text">In this project, we developed a unified wave simulation and analysis suite in Python. By formulating all three wave types within a common partial differential equation (PDE) framework, we were able to build a flexible and extensible solver infrastructure that handles diverse physical domains with a consistent numerical approach.
+    <p class="intro-text">At the same time, reactors must operate safely. Exothermic reactions can create localized hotspots that damage catalyst beds, shorten reactor lifetime, or trigger runaway reactions. 
+      Balancing maximum performance with safe operating conditions is a challenging engineering problem, but one where we can help!
     </p>
 
     <div style="display: flex; justify-content: center; gap: 4rem; margin: 2rem 0;">
-    <img src="/images/wave.png"
-     alt="Accoustic waves through air"
+    <img src="/images/chemical/chemical_reactor.png"
+     alt="Gaseous CO Conversion Reactor "
      style="display: block; max-width: 60%; margin: 2rem auto;" />
     </div>
     
-    <p class="intro-text">At the core of this framework is a general-purpose finite element solver, implemented on top of FEniCS, capable of simulating wave propagation across complex 3D geometries and boundary conditions. This foundation enables high-fidelity modeling of wave interactions in engineered structures, materials, and environments, all within a single, integrated codebase.</p>
+    <p class="intro-text">
+      In this project, we optimized a gaseous CO-to-O₂ converter. The physical setup is shown in the figure above. 
+      On the left, a fixed mixture of CO and O₂ enters the reactor at a specified inlet temperature T_{\text{in}}. 
+      As the gas travels through the catalyzed region, CO is gradually converted into O₂. 
+      The objective is to minimize the CO concentration at the outlet. Increasing the inlet temperature accelerates the reaction and improves conversion. 
+      However, beyond a critical threshold, the system exhibits thermal runaway: the reaction releases heat, the temperature rises, which accelerates the reaction even further, leading to a sharp temperature spike. 
+      The second image shows this temperature spike. The transition is abrupt and displays hysteresis, meaning that once the reactor enters the high-temperature regime, 
+      it may not return to the safe branch even if the inlet temperature is reduced, an important operational and safety risk.
+    </p>
+
+    <div class="img-row">
+      <img src="/images/chemical/pde_solutions.png" alt="CO concentration and temperature">
+      <img src="/images/chemical/scurve.png" alt="Hysteresis Curve">
+    </div>
 
     <p class="intro-text">This suite includes automated mesh importing, seamless integration with a parameter and storage database, and built-in support for automatic hp-refinement analysis
     </p>

@@ -520,3 +520,15 @@ a {
   text-align: center;
   margin: 2rem 0;
 }
+
+.img-row {
+  display: flex;          /* put images next to each other */
+  justify-content: center;/* optional: center them */
+  gap: 1rem;              /* space between images */
+}
+
+.img-row img {
+  width: 300px;           /* or 50%, or any value you like */
+  height: auto;           /* keep aspect ratio */
+  object-fit: cover;      /* crop if aspect ratios differ */
+}

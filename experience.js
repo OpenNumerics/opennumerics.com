@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Optimal Control of Chemical Reactors",
       link: "/solutions/chemical.html",
       description: "PDE Constrained Optimization for Optimal Control of a Gas Reactor",
-      image: "images/chemical_tile.png"
+      image: "images/chemical/chemical_tile.png"
     },
   ];
 

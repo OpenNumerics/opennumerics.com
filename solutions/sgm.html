@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Open Numerics - Generative AI for Porous Media</title>
+  <link rel="stylesheet" href="/style.css" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYR12B0NWT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HYR12B0NWT');
+  </script>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script"
+          async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+</head>
+
+<body>
+  <script src="/inject-partials.js"></script>
+  <div id="navbar-placeholder"></div>
+
+  <section id="SGM" class="panel beige">
+
+Many engineering workflows require rapid generation of physically realistic solution fields, not just a single high-accuracy simulation. In porous-media transport, this need arises in uncertainty quantification, design exploration, and real-time decision-making — settings where thousands of solution realizations may be required, but full PDE simulations are too slow to be used interactively.
+
+In the systems we consider, transport occurs through a heterogeneous porous medium whose microscopic structure is not fully known. This uncertainty is modeled through a spatially varying porosity field ε(x), which directly affects effective transport coefficients such as diffusivity and conductivity. For a fixed set of macroscopic operating conditions, different realizations of ε(x) lead to distinct solution fields for concentration c(x) and electric potential φ(x). Accurately capturing this variability is essential for realistic modeling, but resolving ε(x) explicitly inside each simulation is computationally expensive.
+
+Beyond micro-scale uncertainty, the system behavior is strongly influenced by a small number of macroscopic conditioning parameters. In this project, we condition on:
+	•	a characteristic correlation length ℓ governing spatial variability in ε(x),
+	•	an imposed inlet velocity or flow parameter U₀,
+	•	and a boundary flux / current density Fright applied at the outlet.
+
+Together, these parameters define the operating regime of the system and determine how transport, reaction, and electric effects interact. For each choice of (ℓ, U₀, Fright), there exists not a single solution, but a distribution of admissible solutions arising from unresolved micro-scale structure.
+
+To efficiently model this conditional distribution, we turn to score-based generative models (SGMs) — a class of probabilistic models originally developed for high-quality image generation. Rather than predicting one deterministic solution, SGMs learn how to sample full solution fields from the conditional distribution
+p\big(c(x), \phi(x) \mid \ell, U_0, F_{\text{right}}\big),
+capturing both physical trends and realistic variability.
+
+The model is trained on high-fidelity finite-volume simulations, where each training example consists of a solution pair (c(x), φ(x)) together with its associated conditioning parameters. Spatial structure is handled by convolutional networks, while global parameters and time-like diffusion variables are injected through feature-wise modulation, allowing macroscopic operating conditions to influence local transport behavior in a physically coherent way.
+
+During inference, the trained SGM generates new solution realizations via a fast stochastic sampling process. Physical boundary conditions and gauge constraints are enforced during this sampling step, ensuring that generated solutions remain consistent with the governing equations — even though the underlying microstructure ε(x) is never explicitly reconstructed.
+
+Once trained, the model produces diverse, physically plausible solution fields orders of magnitude faster than direct PDE simulation, enabling rapid scenario exploration, uncertainty propagation, and large-scale sampling pipelines.
+
+This project demonstrates how score-based generative models can be adapted from image synthesis to scientific computing, offering a powerful new approach for fast, conditional solution generation in complex, physics-driven systems.
+
+    <div class="back-button-wrapper">
+    <a href="/#experience" class="button-link">← Back to our Solutions</a>
+  </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 Open Numerics, LLC</p>
+  </footer>
+</body>
+
+</html>

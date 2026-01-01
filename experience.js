@@ -30,6 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "PDE Constrained Optimization for Optimal Control of a Gas Reactor",
       image: "images/chemical/chemical_tile.png"
     },
+    {
+      title: "Generative AI Models for Uncertain PDEs",
+      link: "/solutions/sgm.html",
+      description: "Fast generation of physically consistent PDE solutions under uncertainty, using score-based generative models.",
+      image: "images/chemical/chemical_tile.png"
+    },
   ];
 
   const gridContainer = document.getElementById("projects-grid");

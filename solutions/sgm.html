@@ -35,11 +35,14 @@
   <section id="SGM" class="panel beige">
     <div class="panel-content">
       <h2>Reliable Bayesian Parameter Estimation for Real Engineering Systems</h2>
-      <p class="intro-text">Many engineering workflows require rapid generation of physically realistic solution fields, not just a single high-accuracy simulation. In porous-media transport, this need arises in uncertainty quantification, design exploration, and real-time decision-making — settings where thousands of solution realizations may be required, but full PDE simulations are too slow to be used interactively.
+      <p class="intro-text">Many engineering workflows require <b>rapid generation of physically realistic solution fields</b>, not just a single high-accuracy simulation. In porous-media transport, this need arises in uncertainty quantification, design exploration, and real-time decision-making — settings where thousands of solution realizations may be required, but full PDE simulations are too slow to be used interactively.
       </p>
   
-      <p class="intro-text">In the systems we consider, transport occurs through a heterogeneous porous medium whose microscopic structure is not fully known. This uncertainty is modeled through a spatially varying porosity field $\varepsilon(x)$, which directly affects diffusivity and conductivity. For a fixed set of macroscopic operating conditions, different realizations of $varepsilon(x)$ lead to distinct solution fields for concentration $c(x)$ and electric potential $\varphi(x)$. Accurately capturing this variability is essential for realistic modeling, but solving the PDE with each $\varepsilon(x)$ explicitly is computationally expensive.
-      
+      <p class="intro-text">In our client's battery project, transport occurs through a heterogeneous porous medium whose microscopic structure is not fully known. Uncertainty is modeled through a spatially varying porosity field $\varepsilon(x)$, which directly affects diffusivity and conductivity.
+         For a fixed set of macroscopic operating conditions, different realizations of $\varepsilon(x)$ lead to distinct solution fields for concentration $c(x)$ and electric potential $\varphi(x)$. Accurately capturing this variability is essential for realistic modeling, but solving the PDE with each $\varepsilon(x)$ explicitly is computationally expensive.
+      </p>
+
+  <p class="intro-text">   
   Beyond micro-scale uncertainty, the system behavior is strongly influenced by a small number of macroscopic conditioning parameters. In this project, we condition on:
 	<ul class="lqc-list">
         <li>Typical spatial scale $l$ of $\varepsilon(x)$</li>
@@ -51,8 +54,8 @@
     
     <p class="intro-text">
     To efficiently model this conditional distribution, we turn to score-based generative models (SGMs) — a class of probabilistic models originally developed for high-quality image generation. Rather than predicting one deterministic solution, SGMs learn how to sample full solution fields from the conditional distribution
-$$p\big(c(x), \varphi(x) \mid l, U_0, I_{\text{right}}\big)$$,
-capturing both physical trends and realistic variability.
+$$p\big(c(x), \varphi(x) \mid l, U_0, I_{\text{right}}\big),$$
+to capture both physical trends and inherent variability.
     </p>
     
     <p class="intro-text">The model is trained on high-fidelity finite-volume simulations, where each training example consists of a solution pair $(c(x), \varphi(x))$ together with its associated conditioning parameters. Spatial structure is handled by convolutional networks, while global parameters and time-like diffusion variables are injected through feature-wise modulation (FiLM).

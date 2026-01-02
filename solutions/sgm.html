@@ -39,7 +39,7 @@
       </p>
   
       <p class="intro-text">In our client's battery project, transport occurs through a heterogeneous porous medium whose microscopic structure is not fully known. Uncertainty is modeled through a spatially varying porosity field $\varepsilon(x)$, which directly affects diffusivity and conductivity.
-         For a fixed set of macroscopic operating conditions, different realizations of $\varepsilon(x)$ lead to distinct solution fields for concentration $c(x)$ and electric potential $\varphi(x)$. Accurately capturing this variability is essential for realistic modeling, but solving the PDE with each $\varepsilon(x)$ explicitly is computationally expensive.
+         For a fixed set of macroscopic operating conditions, <b>different realizations of $\varepsilon(x)$ lead to distinct solution fields</b> for concentration $c(x)$ and electric potential $\varphi(x)$. Accurately capturing this variability is essential for realistic modeling, but solving the PDE with each $\varepsilon(x)$ explicitly is computationally expensive.
       </p>
 
   <p class="intro-text">   
@@ -53,19 +53,20 @@
       </p>
     
     <p class="intro-text">
-    To efficiently model this conditional distribution, we turn to score-based generative models (SGMs) — a class of probabilistic models originally developed for high-quality image generation. Rather than predicting one deterministic solution, SGMs learn how to sample full solution fields from the conditional distribution
+    To efficiently model this conditional distribution, we turn to score-based generative models (SGMs) — a class of probabilistic models originally developed for high-quality image generation. Rather than predicting one deterministic solution, <b>SGMs learn how to sample full solution fields from the conditional distribution</b>
 $$p\big(c(x), \varphi(x) \mid l, U_0, I_{\text{right}}\big),$$
 to capture both physical trends and inherent variability.
     </p>
     
-    <p class="intro-text">The model is trained on high-fidelity finite-volume simulations, where each training example consists of a solution pair $(c(x), \varphi(x))$ together with its associated conditioning parameters. Spatial structure is handled by convolutional networks, while global parameters and time-like diffusion variables are injected through feature-wise modulation (FiLM).
-      During inference, the trained SGM generates new solution realizations via a fast stochastic sampling process.
+    <p class="intro-text">The model is <b>trained on high-fidelity finite-volume simulations</b>, where each training example consists of a solution pair $(c(x), \varphi(x))$ together with its associated conditioning parameters. Spatial structure is handled by convolutional networks, while global parameters and time-like diffusion variables are injected through feature-wise modulation (FiLM). The neural network architecture is displayed here:
+      
+      </b>During inference, the trained SGM generates new solution realizations via a fast stochastic sampling process.
     </p>
 
-    <p class="intro-text"> Once trained, the model produces diverse, physically plausible solution fields orders of magnitude faster than direct PDE simulation, enabling rapid scenario exploration, uncertainty propagation, and large-scale sampling pipelines.
+    <p class="intro-text"> Once trained, the model produces diverse, physically plausible solution fields orders of magnitude faster than direct PDE simulation. For example, the figure below compares possible solution profiles by the PDE and the SGM, showing clear similarity:
 
-This project demonstrates how score-based generative models can be adapted from image synthesis to scientific computing, offering a powerful new approach for fast, conditional solution generation in complex, physics-driven systems.
-</p>
+      This project demonstrates how score-based generative models can be used in scientific computing, offering a powerful new approach for fast, conditional solution generation directly meeting our client's needs!
+    </p>
   </div>
 
     <div class="back-button-wrapper">

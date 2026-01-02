@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "Generative AI Models for Uncertain PDEs",
       link: "/solutions/sgm.html",
-      description: "Fast generation of physically consistent PDE solutions under uncertainty, using score-based generative models.",
+      description: "Fast generation of physically consistent PDE solutions under uncertainty.",
       image: "images/chemical/chemical_tile.png"
     },
   ];

@@ -35,11 +35,13 @@
   <section id="SGM" class="panel beige">
     <div class="panel-content">
       <h2>Reliable Bayesian Parameter Estimation for Real Engineering Systems</h2>
-      <p class="intro-text">Many engineering workflows require <b>rapid generation of physically realistic solution fields</b>, not just a single high-accuracy simulation. In porous-media transport, this need arises in uncertainty quantification, design exploration, and real-time decision-making — settings where thousands of solution realizations may be required, but full PDE simulations are too slow to be used interactively.
+      <p class="intro-text">Many engineering workflows require <b>rapid generation of physically realistic solution fields</b>, not just a single high-accuracy simulation. In porous-media transport, this need arises in uncertainty quantification, design exploration, and real-time decision-making 
+        — settings where thousands of solution realizations may be required, but full PDE simulations are too slow to be used interactively.
       </p>
   
       <p class="intro-text">In our client's battery project, transport occurs through a heterogeneous porous medium whose microscopic structure is not fully known. Uncertainty is modeled through a spatially varying porosity field $\varepsilon(x)$, which directly affects diffusivity and conductivity.
-         For a fixed set of macroscopic operating conditions, <b>different realizations of $\varepsilon(x)$ lead to distinct solution fields</b> for concentration $c(x)$ and electric potential $\varphi(x)$. Accurately capturing this variability is essential for realistic modeling, but solving the PDE with each $\varepsilon(x)$ explicitly is computationally expensive.
+        The first figure shows a model of this system. 
+        For a fixed set of macroscopic operating conditions, <b>different realizations of $\varepsilon(x)$ lead to distinct solution fields</b> for concentration $c(x)$ and electric potential $\varphi(x)$. Accurately capturing this variability is essential for realistic modeling, but solving the PDE with each $\varepsilon(x)$ explicitly is computationally expensive.
       </p>
 
   <p class="intro-text">   
@@ -64,7 +66,7 @@ to capture both physical trends and inherent variability.
       </b>During inference, the trained SGM generates new solution realizations via a fast stochastic sampling process.
     </p>
 
-    <p class="intro-text"> Once trained, the model produces diverse, physically plausible solution fields orders of magnitude faster than direct PDE simulation. For example, the figure below compares possible solution profiles by the PDE and the SGM, showing clear similarity:
+    <p class="intro-text"> Once trained, the model produces diverse, physically plausible solution fields <b>orders of magnitude faster than direct PDE simulation</b>. For example, the figure below compares possible solution profiles by the PDE and the SGM, showing clear similarity:
 
       This project demonstrates how score-based generative models can be used in scientific computing, offering a powerful new approach for fast, conditional solution generation directly meeting our client's needs!
     </p>

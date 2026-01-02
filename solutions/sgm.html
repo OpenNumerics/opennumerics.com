@@ -33,29 +33,37 @@
   <div id="navbar-placeholder"></div>
 
   <section id="SGM" class="panel beige">
-
-Many engineering workflows require rapid generation of physically realistic solution fields, not just a single high-accuracy simulation. In porous-media transport, this need arises in uncertainty quantification, design exploration, and real-time decision-making — settings where thousands of solution realizations may be required, but full PDE simulations are too slow to be used interactively.
-
-In the systems we consider, transport occurs through a heterogeneous porous medium whose microscopic structure is not fully known. This uncertainty is modeled through a spatially varying porosity field ε(x), which directly affects effective transport coefficients such as diffusivity and conductivity. For a fixed set of macroscopic operating conditions, different realizations of ε(x) lead to distinct solution fields for concentration c(x) and electric potential φ(x). Accurately capturing this variability is essential for realistic modeling, but resolving ε(x) explicitly inside each simulation is computationally expensive.
-
-Beyond micro-scale uncertainty, the system behavior is strongly influenced by a small number of macroscopic conditioning parameters. In this project, we condition on:
-	•	a characteristic correlation length ℓ governing spatial variability in ε(x),
-	•	an imposed inlet velocity or flow parameter U₀,
-	•	and a boundary flux / current density Fright applied at the outlet.
-
-Together, these parameters define the operating regime of the system and determine how transport, reaction, and electric effects interact. For each choice of (ℓ, U₀, Fright), there exists not a single solution, but a distribution of admissible solutions arising from unresolved micro-scale structure.
-
-To efficiently model this conditional distribution, we turn to score-based generative models (SGMs) — a class of probabilistic models originally developed for high-quality image generation. Rather than predicting one deterministic solution, SGMs learn how to sample full solution fields from the conditional distribution
-p\big(c(x), \phi(x) \mid \ell, U_0, F_{\text{right}}\big),
+    <div class="panel-content">
+      <h2>Reliable Bayesian Parameter Estimation for Real Engineering Systems</h2>
+      <p class="intro-text">Many engineering workflows require rapid generation of physically realistic solution fields, not just a single high-accuracy simulation. In porous-media transport, this need arises in uncertainty quantification, design exploration, and real-time decision-making — settings where thousands of solution realizations may be required, but full PDE simulations are too slow to be used interactively.
+      </p>
+  
+      <p class="intro-text">In the systems we consider, transport occurs through a heterogeneous porous medium whose microscopic structure is not fully known. This uncertainty is modeled through a spatially varying porosity field $\varepsilon(x)$, which directly affects diffusivity and conductivity. For a fixed set of macroscopic operating conditions, different realizations of $varepsilon(x)$ lead to distinct solution fields for concentration $c(x)$ and electric potential $\varphi(x)$. Accurately capturing this variability is essential for realistic modeling, but solving the PDE with each $\varepsilon(x)$ explicitly is computationally expensive.
+      
+  Beyond micro-scale uncertainty, the system behavior is strongly influenced by a small number of macroscopic conditioning parameters. In this project, we condition on:
+	<ul class="lqc-list">
+        <li>Typical spatial scale $l$ of $\varepsilon(x)$</li>
+        <li>Voltage $U_0$ applied over the battery</li>
+        <li>Boundary current density $I_{\text{right}}$</li>
+      </ul>
+    Together, these parameters define the operating regime of the system and determine how transport, reaction, and electric effects interact. For each choice of $(l, U_0, I_{\text{right}})$, there exists not a single solution, but a distribution of admissible solutions arising from unresolved micro-scale structure.
+      </p>
+    
+    <p class="intro-text">
+    To efficiently model this conditional distribution, we turn to score-based generative models (SGMs) — a class of probabilistic models originally developed for high-quality image generation. Rather than predicting one deterministic solution, SGMs learn how to sample full solution fields from the conditional distribution
+$$p\big(c(x), \varphi(x) \mid l, U_0, I_{\text{right}}\big)$$,
 capturing both physical trends and realistic variability.
+    </p>
+    
+    <p class="intro-text">The model is trained on high-fidelity finite-volume simulations, where each training example consists of a solution pair $(c(x), \varphi(x))$ together with its associated conditioning parameters. Spatial structure is handled by convolutional networks, while global parameters and time-like diffusion variables are injected through feature-wise modulation (FiLM).
+      During inference, the trained SGM generates new solution realizations via a fast stochastic sampling process.
+    </p>
 
-The model is trained on high-fidelity finite-volume simulations, where each training example consists of a solution pair (c(x), φ(x)) together with its associated conditioning parameters. Spatial structure is handled by convolutional networks, while global parameters and time-like diffusion variables are injected through feature-wise modulation, allowing macroscopic operating conditions to influence local transport behavior in a physically coherent way.
-
-During inference, the trained SGM generates new solution realizations via a fast stochastic sampling process. Physical boundary conditions and gauge constraints are enforced during this sampling step, ensuring that generated solutions remain consistent with the governing equations — even though the underlying microstructure ε(x) is never explicitly reconstructed.
-
-Once trained, the model produces diverse, physically plausible solution fields orders of magnitude faster than direct PDE simulation, enabling rapid scenario exploration, uncertainty propagation, and large-scale sampling pipelines.
+    <p class="intro-text"> Once trained, the model produces diverse, physically plausible solution fields orders of magnitude faster than direct PDE simulation, enabling rapid scenario exploration, uncertainty propagation, and large-scale sampling pipelines.
 
 This project demonstrates how score-based generative models can be adapted from image synthesis to scientific computing, offering a powerful new approach for fast, conditional solution generation in complex, physics-driven systems.
+</p>
+  </div>
 
     <div class="back-button-wrapper">
     <a href="/#experience" class="button-link">← Back to our Solutions</a>

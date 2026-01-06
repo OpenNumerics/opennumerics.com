@@ -31,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "images/chemical/chemical_tile.png"
     },
     {
-      title: "Generative AI Models for Uncertain PDEs",
+      title: "Fast Exploration of Realistic Physical Designs using Generative AI",
       link: "/solutions/sgm.html",
-      description: "Fast generation of physically consistent PDE solutions under uncertainty.",
+      description: "A real Industrial Case of Score-based Generative Models for Computational Science",
       image: "images/chemical/chemical_tile.png"
     },
   ];

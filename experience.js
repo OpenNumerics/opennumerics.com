@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "images/chemical/chemical_tile.png"
     },
     {
-      title: "Fast Exploration of Realistic Physical Designs using Generative AI",
+      title: "Fast Exploration of Physical Designs using Generative AI",
       link: "/solutions/sgm.html",
       description: "A real Industrial Case of Score-based Generative Models for Computational Science",
       image: "images/chemical/chemical_tile.png"

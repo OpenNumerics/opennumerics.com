@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Fast Exploration of Physical Designs using Generative AI",
       link: "/solutions/sgm.html",
       description: "The first Industrial Case of Score-based Generative Models for Computational Science",
-      image: "images/sgm_setup.png"
+      image: "images/sgm_tile.png"
     },
   ];
 

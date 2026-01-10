@@ -1,10 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     {
+      title: "Digital Twin for Elastic Deformations",
+      link: "/solutions/elasticity.html",
+      description: "Physics-informed AI model for predicting metallic deformations",
+      image: "images/elasticity.png"
+    },
+    {
       title: "Uncertainty-Aware Parameter Estimation for Materials",
       link: "/solutions/bayesian.html",
       description: "Robust Bayesian Optimization and Uncertainty Quantification for Linear Elasticity",
       image: "images/Bayes.png"
+    },
+    {
+      title: "Bifurcation Toolkit for PDEs and ML Models",
+      link: "/solutions/bifurcation.html",
+      description: "Lightweight Python API for numerical continuation and bifurcation detection",
+      image: "images/pycont.png"
     },
     {
       title: "Optimal Control of Chemical Reactors",
@@ -17,18 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
       link: "/solutions/sgm.html",
       description: "The first Industrial GenAI Model for Computational Science",
       image: "images/sgm/sgm_tile.png"
-    },
-    {
-      title: "Digital Twin for Elastic Deformations",
-      link: "/solutions/elasticity.html",
-      description: "Physics-informed AI model for predicting metallic deformations",
-      image: "images/elasticity.png"
-    },
-    {
-      title: "Bifurcation Toolkit for PDEs and ML Models",
-      link: "/solutions/bifurcation.html",
-      description: "Lightweight Python API for numerical continuation and bifurcation detection",
-      image: "images/pycont.png"
     },
     {
       title: "Enhanced Sampling for Molecular Dynamics",

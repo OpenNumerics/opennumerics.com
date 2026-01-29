@@ -7,6 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "images/chemical/chemical_tile.png"
     },
     {
+      title: "Bifurcation Toolkit for PDEs and ML Models",
+      link: "/solutions/bifurcation.html",
+      description: "Lightweight Python API for numerical continuation and bifurcation detection",
+      image: "images/pycont.png"
+    },
+    {
       title: "Digital Twin for Elastic Deformations",
       link: "/solutions/elasticity.html",
       description: "Physics-informed AI model for predicting metallic deformations",
@@ -17,12 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
       link: "/solutions/bayesian.html",
       description: "Robust Bayesian Optimization and Uncertainty Quantification for Linear Elasticity",
       image: "images/Bayes.png"
-    },
-    {
-      title: "Bifurcation Toolkit for PDEs and ML Models",
-      link: "/solutions/bifurcation.html",
-      description: "Lightweight Python API for numerical continuation and bifurcation detection",
-      image: "images/pycont.png"
     },
     {
       title: "Fast Exploration of Physical Designs using Generative AI",

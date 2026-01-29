@@ -21,18 +21,46 @@
   <section id="pycont" class="panel beige">
   <div class="panel-content">
     <h2>PyCont: Continuation and Bifurcation Detection for Complex Systems</h2>
-    <p class="intro-text">Understanding how complex systems evolve as parameters vary is fundamental in many science and engineering fields. Whether it's bistability in chemical networks, critical transitions in mechanical systems, or pattern formation in PDEs, detecting bifurcations and continuing solutions accross parameter values is an essential task in computational science.</p>
 
-    <p class="intro-text">At Open Numerics, we've developed <strong>PyCont-Lite</strong>, a lightweight and scalable Python package for numerical continuation and bifurcation detection tasks. PyCont enables users to trace solution curves of PDEs through folds and turning points where classical parameter sweeps fail.
+    <h3>The Problem</h3>
+    <p class="intro-text">
+      Numerical continuation and bifurcation detection is one of the most important computational tools from the 20th century. It is a workhorse in all of computational science and engineering. 
+      Continuation is used to understand how complex systems change as parameters vary. It is fundamental to studing highly complex dynamical systems and their transition points, such 
+      as bistability in chemical networks, critical transitions in mechanical systems, pattern formation in PDEs, stable conformations of large molecules and
+      some problems in aerodynamics.
+    </p>
+
+    <p class="intro-text">
+      However, the whole world still relies Auto, the only robust tool for continuation and bifurcation detection. It was written in Fortran in the 1980s. 
+      No modern and easy-to-use implementation in a high-level language exists. As a result, there is no way to couple it to modern software, enable GPU acceleration through CUDA,
+      or link it to high-performance computing environments. This impactful algorithm has no way to grow.
+    </p>
+
+    <h3>Our Approach</h3>
+    <p class="intro-text">
+      At Open Numerics, we've developed <strong>PyCont-Lite</strong>, the first modern, lightweight and scalable Python API for numerical continuation and bifurcation detection.
+      PyCont-Lite supports all modern tensor libraries (numpy, jax, pytorch) and also has full GPU support enabled through CUDA. 
+      It uses more advanced numerical routines and solvers than older packages that have not been updated.
+    </p>
 
     <img src="/images/pycont.png"
      alt="Solution branches of the Pitchfork Bifurcation"
      style="display: block; max-width: 100%; margin: 2rem auto;" />
 
-    <p class="intro-text">PyCont is built around a fast and robust Newton-Krylov solver that efficiently solves large-scale nonlinear systems, including those arising from PDE discretizations. Our pseudo-arclength stepping algorithm ensures stable continuation, while custom Jacobian-vector products and adaptive tangents allow for precise control of step size and curvature.</p>
+    <p class="intro-text">PyCont is built around a fast and robust Newton-Krylov solver that efficiently solves large-scale nonlinear systems, 
+      including those arising from PDE discretizations. It can, for example, also be used to trace the classification threshold of neural networks, 
+      and thousands of other use cases we haven't thought about. As a bonus, <strong>PyCont-Lite can detect bifurcation points and branch-switch automatically.</strong> 
+    </p>
 
+    <h3>The Result</h3>
     <p class="intro-text">
-      In addition to solution tracking, <strong>PyCont can detect bifurcation points and branch-switch automatically.</strong> This makes it ideal for all kinds of complex nonlinear systems. PyCont provides a fast, flexible, and extensible platform for continuation analysis. Its clean Python interface integrates easily with scientific codebases and simulation pipelines, enabling deeper insight into your models.
+      PyCont-Lite achieves similar accuracy to older continuation packages, yet is faster, smaller and allows for GPU acceleration.
+      It provides a fast, flexible, and extensible platform, and its clean Python interface integrates easily with scientific codebases and simulation pipelines, 
+      enabling deeper insight into your models.
+    </p>
+
+    <p class="intro-text"></p>
+      PyCont-Lite can be licensed. An older open source version is available on GitHub as well.
     </p>
   </div>
 

@@ -33,13 +33,31 @@
 
   <section id="wave" class="panel beige">
   <div class="panel-content">
-    <h2>PDE-Constrained Control of Chemical Reactors</h2>
-    <p class="intro-text">Modern chemical reactors are governed by complex physics and chemistry: heat transfer, fluid flow, and reaction kinetics interact across the entire reactor volume in highly nonlinear ways. 
-      These <strong>coupled effects</strong> determine conversion, yield, selectivity, energy consumption, and overall stability. 
-      Small changes in inlet concentrations, temperatures or catalyst distribution can lead to <strong>large variations in output and (financial) yield</strong>.</p>
+    <h2>Advanced PDE-Constrained Control of Chemical Reactors</h2>
 
-    <p class="intro-text">At the same time, reactors must operate safely. Exothermic reactions can create localized hotspots that damage catalyst beds, shorten reactor lifetime, or trigger runaway reactions. 
-      <strong>Balancing maximum performance with safe operating conditions is a challenging engineering problem, but one where we can help!</strong>
+    <h3>The Problem</h3>
+    <p class="intro-text">
+      Modern chemical reactors operate at the intersection of heat transfer, fluid flow, and complex reaction kinetics. 
+      These physical and chemical processes are tightly coupled and highly nonlinear, meaning that 
+      <strong>small changes in operating conditions</strong> - inlet composition, temperature, or catalyst placement - can propagate through the reactor and lead to 
+      <strong>large variations in conversion, yield, energy consumption, and profitability</strong>.
+    </p>
+
+    <p class="intro-text">
+      One of our clients operates a gaseous carbon monoxide (CO) to oxygen (O₂) reactor, where catalyst pellets aid in CO conversion. 
+      Despite stable inlet conditions, they faced seemingly random temperature spikes that damaged the reactor and incurred a high cost of repair and downtime. 
+      The underlying challenge was a familiar one in reactor engineering: 
+      <strong>maximize the conversion yield while avoid thermal spikes and damage</strong>.
+    </p>
+
+    <p class="intro-text">
+      Exothermic reactions amplify this difficulty. Heat released by the reaction can accumulate locally, degrading catalyst beds, shortening reactor lifetime, 
+      or in extreme cases triggering runaway behavior. 
+      <strong>Achieving high performance without compromising safety requires deliberate, physics-aware control</strong>, and existing controllers were not up to the task.
+    </p>
+
+    <p class="intro-text">
+      This is precisely where our expertise adds value.
     </p>
 
     <div style="display: flex; justify-content: center; gap: 4rem; margin: 2rem 0;">
@@ -48,6 +66,8 @@
      style="display: block; max-width: 60%; margin: 2rem auto;" />
     </div>
     
+    <h3>Our Appraoch</h3>
+
     <p class="intro-text">
       In this project, <strong>we optimized a gaseous CO-to-O₂ converter</strong>. The physical setup is shown in the figure above. 
       On the left, a fixed mixture of CO and O₂ enters the reactor at a specified inlet temperature $T_{\text{in}}$. 

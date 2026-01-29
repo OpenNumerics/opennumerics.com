@@ -35,12 +35,13 @@
   <section id="SGM" class="panel beige">
     <div class="panel-content">
       <h2>Fast Exploration of Realistic Designs using Score-based Generative Models</h2>
+
       <p class="intro-text">Many engineering workflows require <b>rapid generation of physically realistic designs</b>, not just a single high-accuracy simulation. 
         An example is porous-media transport. Here, there is a need for uncertainty quantification, design exploration, and real-time decision-making 
         — settings where thousands of quick design realizations may be required, but full computational model is too slow to be used interactively.
       </p>
   
-      <h3>Our Client's Need</h3>
+      <h3>The Problem</h3>
       <p class="intro-text">In our client's project, ion transport occurs through a battery (a heterogeneous porous medium) whose microscopic structure is not fully unraveled. 
         This micro-scale uncertainty is modeled through a spatially varying porosity field $\varepsilon(x)$, which directly affects diffusivity, conductivity and the operating conditions of the battery.
         For a fixed set of macroscopic operating conditions, <b>different realizations of $\varepsilon(x)$ lead to distinct solution fields</b> for the ion concentration $c(x)$ 
@@ -87,6 +88,7 @@
            style="display: block; max-width: 80%; margin: 2rem auto;" />
       </p>
 
+      <h3>The Result</h3>
       <p class="intro-text"> Once trained, the model produces diverse, physically plausible designs <b>orders of magnitude faster than direct physics simulations</b>. 
         Even more, our approach captures the uncertainty very well. The final figure shows the mean and 95% confidence interval of 500 realizations of the SGM
         <img src="/images/sgm/CI.png"

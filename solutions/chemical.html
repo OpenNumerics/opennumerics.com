@@ -62,53 +62,40 @@
 
     <div style="display: flex; justify-content: center; gap: 4rem; margin: 2rem 0;">
     <img src="/images/chemical/chemical_reactor.png"
-     alt="Gaseous CO Conversion Reactor "
+     alt="Gaseous CO Conversion Reactor. On the left a fixed mixture of CO and O₂ enters the reactor at a specified inlet temperature $T_{\text{in}}$. 
+      As the gas travels through the catalyzed region, CO is gradually converted into O₂."
      style="display: block; max-width: 60%; margin: 2rem auto;" />
     </div>
     
-    <h3>Our Appraoch</h3>
-
+    <h3>Our Approach</h3>
     <p class="intro-text">
-      In this project, <strong>we optimized a gaseous CO-to-O₂ converter</strong>. The physical setup is shown in the figure above. 
-      On the left, a fixed mixture of CO and O₂ enters the reactor at a specified inlet temperature $T_{\text{in}}$. 
-      As the gas travels through the catalyzed region, CO is gradually converted into O₂. The objective is to minimize the CO concentration at the outlet. Increasing the inlet temperature accelerates the reaction and improves conversion. 
-      However, beyond a critical threshold, the <strong>system exhibits thermal runaway</strong>: the reaction releases heat, the temperature rises, which accelerates the reaction even further, leading to a sharp temperature spike. 
-      The second image shows this temperature spike. The transition is abrupt and displays hysteresis, meaning that once the reactor enters the high-temperature regime, 
-      it may not return to the safe branch even if the inlet temperature is reduced, an important operational and safety risk.
-    </p>
+      We <strong>built a custom controller</strong> that maximizes CO conversion while deliberately keeping the reactor away from runaway conditions. From a first-principles
+      point of view, we decided to optimize the objective
 
-    <div class="images-horizontal" style="display: flex; justify-content: center; gap: 4rem; margin: 2rem 0;">
-      <img src="/images/chemical/pde_solutions.png" alt="CO concentration and temperature">
-      <img src="/images/chemical/scurve.png" alt="Hysteresis Curve">
-    </div>
+      $$\min_{a} J(a) = -\frac{\mathrm{CO}_{\text{out}}}{\mathrm{CO}_{\text{in}}} \;+\; \gamma \int \max(T(z) - T_{\text{in}}, 0)\, dz. $$ 
 
-    <p class="intro-text">At Open Numerics, <strong>we built a custom controller that maximizes CO conversion while keeping the reactor safely away from runaway conditions</strong>. 
-      Our control input is the catalyst concentration $a(z)$, which determines how rapidly the reaction proceeds along the reactor. 
-      The reactor's temperature and species profiles are governed by first-principles PDEs describing transport, heat release, and reaction kinetics. 
-      These <strong>physics-based equations serve as constraints in the optimization</strong>, ensuring that every proposed solution respects the true thermochemical behavior of the system.
-    </p>
-
-    <p class="intro-text">
-      We solve the optimization problem
-      
-      $$\min_{a} J(a) = -\frac{\mathrm{CO}_{\text{out}}}{\mathrm{CO}_{\text{in}}} \;+\; \gamma \int \max(T(z) - T_{\text{in}}, 0)\, dz, $$ 
-
-      balancing high conversion with strict temperature control.
-    </p>
-
-    <p class="intro-text">
-      <strong>Our approach combines high-fidelity physics with cutting-edge optimization techniques.</strong> We use advanced finite-element PDE solvers and adjoint-based gradients to optimize controls efficiently and reliably, even in high-dimensional design spaces. 
-      The result is a solution that is optimal, physically interpretable, robust to uncertainty, and fully aligned with engineering safety limits by staying away from the upper branch.
+      The first term measures the yield and the second term keeps the reactor away from thermal runaway. By identifying the catalyst concentration $a(z)$ as the primary design variable,
+      we gained direct control over both performance and stability. The resulting temperature and species profiles are predicted using first-principles differential equations, 
+      which we embed directly into the control design. This <strong>physics-aware, PDE-constrained optimization approach keeps the reactor operating at peak efficiency while respecting strict safety margins.</strong>
+      Figure 2 summarizes the physics-aware control loop.
     </p>
 
     <div style="display: flex; justify-content: center; gap: 4rem; margin: 2rem 0;">
-    <img src="/images/chemical/workflow.png"
-     alt="PDE-Constrained Optimization Workflow."
-     style="display: block; max-width: 60%; margin: 2rem auto;" />
+      <img src="/images/chemical/workflow.png"
+           alt="PDE-Constrained Optimization Workflow."
+           style="display: block; max-width: 60%; margin: 2rem auto;" />
     </div>
 
+
+    <h3>The Result</h3>
     <p class="intro-text">
-      <strong>For clients, this means safer operation, higher yield, larger profit margins, and the ability to explore design and control strategies digitally - before ever touching the physical reactor.</strong>
+      In summary, our approach <strong>combines high-fidelity physics with cutting-edge optimization techniques</strong>. The result are operating conditions that are optimal, 
+      physically interpretable, robust to uncertainty, and fully aligned with engineering safety limits.
+    </p>
+
+    <p class="intro-text">
+      We have been able to eliminate thermal spikes altogether. As a bonus, the <strong>total yield has also increased from 36% to 44%</strong>. For clients, this means safer operation, higher yield, 
+      <strong>larger profit margins</strong>, and the ability to explore design and control strategies digitally - before ever touching the reactor.
     </p>
   </div>
 

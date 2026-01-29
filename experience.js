@@ -13,10 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "images/pycont.png"
     },
     {
-      title: "Digital Twin for Elastic Deformations",
-      link: "/solutions/elasticity.html",
-      description: "Physics-informed AI model for predicting metallic deformations",
-      image: "images/elasticity.png"
+      title: "Fast Exploration of Physical Designs using Generative AI",
+      link: "/solutions/sgm.html",
+      description: "The first Industrial GenAI Model for Computational Science",
+      image: "images/sgm/sgm_tile.png"
     },
     {
       title: "Uncertainty-Aware Parameter Estimation for Materials",
@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "images/Bayes.png"
     },
     {
-      title: "Fast Exploration of Physical Designs using Generative AI",
-      link: "/solutions/sgm.html",
-      description: "The first Industrial GenAI Model for Computational Science",
-      image: "images/sgm/sgm_tile.png"
+      title: "Digital Twin for Elastic Deformations",
+      link: "/solutions/elasticity.html",
+      description: "Physics-informed AI model for predicting metallic deformations",
+      image: "images/elasticity.png"
     },
     {
       title: "Enhanced Sampling for Molecular Dynamics",

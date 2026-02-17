@@ -126,6 +126,35 @@ body {
   transform: translateX(-10%); 
 }
 
+.impact-strip {
+  margin: 1.5rem 0 1.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+.impact-title {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  opacity: 0.85;
+  margin-bottom: 0.5rem;
+}
+
+.impact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.impact-list li {
+  margin: 0.35rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
 .panel-content p.mission-statement {
   font-size: 1.2rem;
   font-weight: 600;

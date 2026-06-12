@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <title>Open Numerics - PyCont-Lite</title>
   <link rel="stylesheet" href="/style.css" />
 
@@ -15,11 +18,20 @@
 </head>
 
 <body>
-  <script src="/inject-partials.js"></script>
-  <div id="navbar-placeholder"></div>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#approach">How we work</a>
+        <a href="/#services">What we offer</a>
+        <a href="/#experience">Our work</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <section id="pycont" class="panel beige">
-  <div class="panel-content">
+  <main class="article">
+  <div class="prose">
     <h2>PyCont: Continuation and Bifurcation Detection for Complex Systems</h2>
 
     <h3>The Problem</h3>
@@ -32,7 +44,7 @@
 
     <p class="intro-text">
       However, the only robust tool for continuation and bifurcation detection is Auto. It was written in Fortran in the 1980s and the whole world still relies on it.
-      <strong>modern and easy-to-use implementation in a high-level language exists</strong>. As a result, there is no way to couple it to modern software, enable GPU acceleration through CUDA,
+      <strong>No modern, easy-to-use implementation in a high-level language exists</strong>. As a result, there is no way to couple it to modern software, enable GPU acceleration through CUDA,
       or link it to high-performance computing environments. This impactful algorithm has no way to grow.
     </p>
 
@@ -44,8 +56,7 @@
     </p>
 
     <img src="/images/pycont.png"
-     alt="Solution branches of the Pitchfork Bifurcation"
-     style="display: block; max-width: 100%; margin: 2rem auto;" />
+         alt="Solution branches of the pitchfork bifurcation" />
 
     <p class="intro-text">PyCont is built around a fast and robust Newton-Krylov solver that efficiently solves large-scale nonlinear systems, 
       including those arising from PDE discretizations. It can, for example, also be used to trace the classification threshold of neural networks, 
@@ -67,7 +78,7 @@
   <div class="back-button-wrapper">
     <a href="/#experience" class="button-link">← Back to our Solutions</a>
   </div>
-  </section>
+  </main>
 
     <footer class="footer">
     <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>

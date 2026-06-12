@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <title>Open Numerics - Robust Bayesian Optimization</title>
   <link rel="stylesheet" href="/style.css" />
 
@@ -29,11 +32,20 @@
 </head>
 
 <body>
-  <script src="/inject-partials.js"></script>
-  <div id="navbar-placeholder"></div>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#approach">How we work</a>
+        <a href="/#services">What we offer</a>
+        <a href="/#experience">Our work</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <section id="Bayes" class="panel beige">
-  <div class="panel-content">
+  <main class="article">
+  <div class="prose">
     <h2>Robust Bayesian Optimization and Uncertainty Quantification for Linear Elasticity</h2>
     <p class="intro-text">Robust and accurate parameter estimation is essential for building reliable data models, simulations, and digital twins. Whether your goal is identifying material properties, building a physics model, or training a digital twin from measurement data, 
                           you need statistical inference methods that are reliable, stable, and grounded in first principles.</p>
@@ -76,8 +88,7 @@
       left edge, and applying a constant traction force on the right. 
 
       <img src="/images/MetalPlate.png"
-           alt="A typical experimental setup"
-           style="display: block; max-width: 100%; margin: 2rem auto;" />
+           alt="A typical experimental setup" />
       
       Using Direct Image Correlation (DIC) measurements these deformations can be observed. These deformations can also be estimated by solving the elastostatic equations
       $$
@@ -87,8 +98,7 @@
 
       We developed a state-of-the-art Bayesian optimizer that tightly integrates robust MAP estimation with accurate finite element simulations.
       <img src="/images/posterior.png"
-           alt="Convergence to the Posterior Maximum"
-           style="display: block; max-width: 100%; margin: 2rem auto;" />
+           alt="Convergence to the posterior maximum" />
     </p>
 
     <p class="intro-text">
@@ -100,7 +110,7 @@
   <div class="back-button-wrapper">
     <a href="/#experience" class="button-link">← Back to our Solutions</a>
   </div>
-  </section>
+  </main>
 
   <footer class="footer">
   <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>

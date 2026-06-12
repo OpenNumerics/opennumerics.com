@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <title>Open Numerics - Optimal Control of a Chemical Reactor</title>
   <link rel="stylesheet" href="/style.css" />
   
@@ -28,11 +31,20 @@
 </head>
 
 <body>
-  <script src="/inject-partials.js"></script>
-  <div id="navbar-placeholder"></div>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#approach">How we work</a>
+        <a href="/#services">What we offer</a>
+        <a href="/#experience">Our work</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <section id="wave" class="panel beige">
-  <div class="panel-content">
+  <main class="article">
+  <div class="prose">
     <h2>Advanced PDE-Constrained Control of Chemical Reactors</h2>
 
     <h3>The Problem</h3>
@@ -60,12 +72,11 @@
       This is precisely where our expertise adds value.
     </p>
 
-    <div style="display: flex; justify-content: center; gap: 4rem; margin: 2rem 0;">
-    <img src="/images/chemical/chemical_reactor.png"
-     alt="Gaseous CO Conversion Reactor. On the left a fixed mixture of CO and O₂ enters the reactor at a specified inlet temperature $T_{\text{in}}$. 
-      As the gas travels through the catalyzed region, CO is gradually converted into O₂."
-     style="display: block; max-width: 60%; margin: 2rem auto;" />
-    </div>
+    <figure class="figure figure--medium">
+      <img src="/images/chemical/chemical_reactor.png"
+           alt="Gaseous CO conversion reactor: a fixed mixture of CO and O₂ enters at a set inlet temperature and CO is gradually converted across the catalyzed region." />
+      <figcaption>Figure 1. Gaseous CO conversion reactor.</figcaption>
+    </figure>
     
     <h3>Our Approach</h3>
     <p class="intro-text">
@@ -80,11 +91,11 @@
       Figure 2 summarizes the physics-aware control loop.
     </p>
 
-    <div style="display: flex; justify-content: center; gap: 4rem; margin: 2rem 0;">
+    <figure class="figure figure--medium">
       <img src="/images/chemical/workflow.png"
-           alt="PDE-Constrained Optimization Workflow."
-           style="display: block; max-width: 60%; margin: 2rem auto;" />
-    </div>
+           alt="PDE-constrained optimization workflow." />
+      <figcaption>Figure 2. The physics-aware control loop.</figcaption>
+    </figure>
 
 
     <h3>The Result</h3>
@@ -94,7 +105,7 @@
     </p>
 
     <p class="intro-text">
-      We have been able to eliminate thermal spikes altogether. As a bonus, the <strong>total yield has also increased from 36% to 44%</strong>. For clients, this means safer operation, higher yield, 
+      We have been able to eliminate thermal spikes altogether. As a bonus, the <strong>total yield has also increased from 17% to 44%</strong>. For clients, this means safer operation, higher yield, 
       <strong>larger profit margins</strong>, and the ability to explore design and control strategies digitally - before ever touching the reactor.
     </p>
   </div>
@@ -102,7 +113,7 @@
   <div class="back-button-wrapper">
     <a href="/#experience" class="button-link">← Back to our Solutions</a>
   </div>
-  </section>
+  </main>
 
   <footer class="footer">
     <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>

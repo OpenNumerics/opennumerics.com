@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Open Numerics</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Open Numerics — Scientific Computing &amp; AI, Advised and Built</title>
+  <meta name="description" content="Open Numerics advises on the hardest scientific-computing and AI problems — and builds and deploys the solution. PDE simulation, scientific machine learning, uncertainty quantification, GPU/HPC." />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/style.css" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYR12B0NWT"></script>
@@ -9,94 +13,152 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-HYR12B0NWT');
   </script>
 </head>
 
 <body>
-  <script src="/inject-partials.js"></script>
-  <div id="navbar-placeholder"></div>
-
-  <!-- Panel 1: Mission / Hero -->
-<section id="home" class="panel teal">
-  <div class="panel-content hero-content">
-
-    <h1 class="panel-title">Open Numerics</h1>
-
-    <p class="intro-text">
-      We help R&D and engineering teams:
-    </p>
-
-    <ul class="hero-list">
-      <li>Accelerate PDE simulations and solvers with Machine Learning surrogates and foundation models</li>
-      <li>Determine physical parameters from experimental data and reconciliation</li>
-      <li>Quantify uncertainty and improve shape optimization using generative AI</li>
-    </ul>
-
-    <!-- Recent wins / proof -->
-    <div class="impact-strip">
-      <p class="impact-title">Recent wins</p>
-      <ul class="impact-list">
-        <li><strong>Yield:</strong> increased chemical reactor conversion from <strong>17% → 44%</strong> via PDE-constrained optimization</li>
-        <li><strong>Speed:</strong> achieved <strong>3x faster</strong> time-to-solution for battery PDE workflows using generative AI</li>
-        <li><strong>Deployment:</strong> built a custom API for <strong>fast steady-state</strong> evaluation of chemical systems</li>
-      </ul>
+  <!-- Navbar -->
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="#approach">How we work</a>
+        <a href="#services">What we offer</a>
+        <a href="#experience">Our work</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <p class="mission-statement">
-      From biotech to pharma, from energy to aerospace, our mission is to make high-performance computing and machine learning solutions <strong>tailored to your toughest challenges</strong>.
-    </p>
-
-    <a href="#services" class="cta-button">Explore What We Do</a>
-
-  </div>
-</section>
-
-  <!-- Panel 2: Vision -->
-  <section id="vision" class="panel beige">
-    <h1 class="panel-title">Our Vision</h2>
-
-    <div class="panel-body">
-      <p>
-        We believe meaningful value is created when advanced computational science and AI are turned into practical tools for real decisions.
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <span class="eyebrow">Scientific computing &amp; AI</span>
+      <h1>Open Numerics</h1>
+      <p class="hero__tagline">
+        We <span class="accent">advise</span> on the hardest computational problems —
+        and <span class="accent">build</span> the solution.
       </p>
-
-      <p>
-        We are driven by curiosity and rigor, not only to solve practical problems,
-        but to advance the limits of possibility along the way.
+      <p class="hero__sub">
+        From PDE simulation and scientific machine learning to uncertainty quantification
+        and GPU/HPC, we turn advanced models into tools your team can actually run.
       </p>
+      <div class="hero__actions">
+        <a href="#approach" class="btn btn--primary">See how we work</a>
+        <a href="#experience" class="btn btn--ghost">View our work</a>
+      </div>
+    </div>
+  </section>
 
-      <p class="mission-punchline">
-        Our mission is simple: turn complex models into real gains for your business.
-      </p>
+  <!-- Metrics / proof -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Recent wins</span>
+        <h2 class="section-title">Results we've delivered</h2>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric__num">17% <span>&rarr; 44%</span></div>
+          <p class="metric__label">Reactor conversion lifted via PDE-constrained optimization</p>
+        </div>
+        <div class="metric">
+          <div class="metric__num">3<span>&times;</span></div>
+          <p class="metric__label">Faster time-to-solution for battery PDE workflows using generative AI</p>
+        </div>
+        <div class="metric">
+          <div class="metric__num">10<span>&times;</span></div>
+          <p class="metric__label">Faster design cycles with a deployed neural-operator digital twin</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <p>
-        Whether through large-scale simulation, scientific machine learning, uncertainty-aware modeling, or intelligent agents, our work is grounded in deep technical insight and a relentless focus on outcomes that matter in practice.
+  <!-- Two-track: How we work -->
+  <section id="approach" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">How we work</span>
+        <h2 class="section-title">An advisory firm that ships its own code</h2>
+        <p class="section-sub">
+          Most teams have to choose between consultants who only advise and vendors who
+          only build. We do both — and the same people who scope the problem deliver the solution.
+        </p>
+      </div>
+
+      <div class="tracks">
+        <div class="track track--advisory">
+          <span class="track__tag">Advisory</span>
+          <h3>We help you decide</h3>
+          <p>Independent, technical guidance before a line of code is written.</p>
+          <ul class="track__list">
+            <li>Feasibility studies &amp; method selection</li>
+            <li>Architecture &amp; modeling reviews</li>
+            <li>Second opinions on ML and numerical approaches</li>
+            <li>Roadmaps for simulation &amp; AI initiatives</li>
+          </ul>
+        </div>
+
+        <div class="track track--build">
+          <span class="track__tag">Implementation</span>
+          <h3>We build and deploy</h3>
+          <p>Production-grade tools, delivered where and how you need them.</p>
+          <ul class="track__list">
+            <li>Custom solvers, surrogates &amp; ML models</li>
+            <li>GPU/CUDA &amp; HPC acceleration</li>
+            <li>APIs, digital twins &amp; simulation pipelines</li>
+            <li>Onsite, cloud, or containerized deployment + maintenance</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="tracks__note">
+        Engagements range from a focused advisory sprint to a complete, deployed system —
+        all tailored to your problem and your form of execution.
       </p>
     </div>
   </section>
 
-  <!-- Panel 3: Services -->
-  <section id="services" class="panel teal">
-    <h1 class="panel-title">What we Offer</h1>
-    <div class="panel-content">
-    <div class="services-wrapper">
+  <!-- Vision -->
+  <section id="vision" class="section section--tint">
+    <div class="container">
+      <div class="vision">
+        <span class="eyebrow">Our vision</span>
+        <p class="lead">Turn complex models into real gains for your business.</p>
+        <p>
+          Value is created when advanced computational science and AI become practical tools
+          for real decisions. We are driven by curiosity and rigor — not only to solve the
+          problem in front of us, but to push the limits of what's possible along the way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">What we offer</span>
+        <h2 class="section-title">Capabilities</h2>
+        <p class="section-sub">Six areas of deep expertise. Click any one to learn more.</p>
+      </div>
+
       <ul class="services-list">
         <li class="expandable-item" role="button" aria-expanded="false">
           <div class="item-header">
-            <img class="service-icon small" src="icons/modelling_40x40.svg" alt="Quantitative Modeling Icon">
-            <span>Scalable Quantitative Modeling & Simulations</span>
+            <img class="service-icon small" src="icons/modelling_40x40.svg" alt="">
+            <span>Scalable Quantitative Modeling &amp; Simulations</span>
             <span class="plus-sign">+</span>
           </div>
           <div class="item-content">
             <div class="item-detail">
-              <img class="service-image large" src="icons/modelling_240x160.svg" alt="Quantitative Modeling Illustration">
+              <img class="service-image large" src="icons/modelling_240x160.svg" alt="Quantitative modeling illustration">
               <div class="text-block">
-                <p><strong>Modelling the real world: reliably and at scale.</strong></p>
-                <p>We design and implement quantitative models and software tools to simulate complex systems. Whether you're capturing physical processes, engineered systems, or data-driven phenomena, our models are grounded in first principles and enhanced by data.</p>
-                <p>We specialize in PDE-based modeling and simulation, with expertise in scalable implementations using tools like FEniCS (finite elements), OpenFOAM (finite volumes), and custom solvers. Our work spans deterministic and stochastic systems, hybrid physics-ML architectures, and multiscale formulations.</p>
-                <p>From early-stage prototyping to production-scale simulation, we support the full modeling lifecycle by delivering actionable insight across domains and deployment environments.</p>
+                <p><strong>Modeling the real world: reliably and at scale.</strong></p>
+                <p>We design and implement quantitative models and software to simulate complex systems — physical processes, engineered systems, or data-driven phenomena — grounded in first principles and enhanced by data.</p>
+                <p>We specialize in PDE-based modeling and simulation, with scalable implementations using tools like FEniCS (finite elements), OpenFOAM (finite volumes), and custom solvers, spanning deterministic and stochastic systems, hybrid physics-ML architectures, and multiscale formulations.</p>
+                <p>From early prototyping to production-scale simulation, we support the full modeling lifecycle across domains and deployment environments.</p>
               </div>
             </div>
           </div>
@@ -104,37 +166,37 @@
 
         <li class="expandable-item" role="button" aria-expanded="false">
           <div class="item-header">
-            <img class="service-icon small" src="icons/sciml_40x40.svg" alt="Quantitative Modeling Icon">
-            <span>Machine Learning & AI for Scientific Data</span>
+            <img class="service-icon small" src="icons/sciml_40x40.svg" alt="">
+            <span>Machine Learning &amp; AI for Scientific Data</span>
             <span class="plus-sign">+</span>
           </div>
           <div class="item-content">
             <div class="item-detail">
-              <img class="service-image large" src="icons/sciml_240x160.svg" alt="Quantitative Modeling Illustration">
+              <img class="service-image large" src="icons/sciml_240x160.svg" alt="Scientific machine learning illustration">
               <div class="text-block">
-                <p><strong>Turning Scientific Data into Predictive Power.</strong></p>
-                <p>From physical measurements to simulation outputs, scientific data is everywhere but traditional models often struggle. They may oversimplify complex dynamics or demand excessive compute. We address this by building custom machine learning tools tailored to your scientific workflows.</p>
-                <p>Our approach draws on scientific machine learning (SciML), where first-principles physics meets data-driven modeling. Whether you're accelerating a numerical solver, constructing a digital twin, or learning unknown dynamics from experiments, we develop models that are accurate, efficient, and physically grounded.</p>
-                <p>Use cases include building foundation models, design optimization, and uncertainty quantification: all powered by modern ML for science.</p>
+                <p><strong>Turning scientific data into predictive power.</strong></p>
+                <p>From physical measurements to simulation outputs, scientific data is everywhere — but traditional models often oversimplify complex dynamics or demand excessive compute. We build custom machine learning tools tailored to your scientific workflows.</p>
+                <p>Our approach draws on scientific machine learning (SciML), where first-principles physics meets data-driven modeling. Whether you're accelerating a numerical solver, building a digital twin, or learning unknown dynamics from experiments, we develop models that are accurate, efficient, and physically grounded.</p>
+                <p>Use cases include foundation models, design optimization, and uncertainty quantification — all powered by modern ML for science.</p>
               </div>
             </div>
           </div>
         </li>
-       
+
         <li class="expandable-item" role="button" aria-expanded="false">
           <div class="item-header">
-            <img class="service-icon custom small" src="icons/custom_40x40.svg" alt="Quantitative Modeling Icon">
-            <span>Custom Algorithms & Numerical Solvers</span>
+            <img class="service-icon custom small" src="icons/custom_40x40.svg" alt="">
+            <span>Custom Algorithms &amp; Numerical Solvers</span>
             <span class="plus-sign">+</span>
           </div>
           <div class="item-content">
             <div class="item-detail">
-              <img class="service-image custom large" src="icons/custom_240x160.svg" alt="Quantitative Modeling Illustration">
+              <img class="service-image custom large" src="icons/custom_240x160.svg" alt="Custom algorithms illustration">
               <div class="text-block">
                 <p><strong>Solvers that fit your problem, not the other way around.</strong></p>
-                <p>At Open Numerics we have decades of experience designing state-of-the-art numerical and machine learning algorithms for scientific and engineering applications. We specialize in creating methods that are tightly aligned with the structure and demands of your problem, not some generic off-the-shelf tools.</p>
-                <p>Our expertise spans fast linear and nonlinear solvers, domain-specific PDE discretizations, adaptive time-stepping, and particle-based simulation methods. We also build scalable surrogate models, customized ML optimizers, advanced sampling techniques, and uncertainty quantification workflows for both deterministic and stochastic systems.</p>
-                <p>From multiscale dynamics to PDE-constrained optimization, we develop robust computational tools that enable deeper insight and better performance, all grounded in scientific rigor and algorithmic innovation.
+                <p>We have decades of experience designing state-of-the-art numerical and machine learning algorithms for scientific and engineering applications — methods aligned with the structure and demands of your problem, not generic off-the-shelf tools.</p>
+                <p>Our expertise spans fast linear and nonlinear solvers, domain-specific PDE discretizations, adaptive time-stepping, and particle-based simulation. We also build scalable surrogate models, customized ML optimizers, advanced sampling techniques, and uncertainty quantification workflows for deterministic and stochastic systems.</p>
+                <p>From multiscale dynamics to PDE-constrained optimization, we develop robust computational tools grounded in scientific rigor and algorithmic innovation.</p>
               </div>
             </div>
           </div>
@@ -142,17 +204,17 @@
 
         <li class="expandable-item" role="button" aria-expanded="false">
           <div class="item-header">
-            <img class="service-icon small" src="icons/gaussian_40x40.svg" alt="Quantitative Modeling Icon">
-            <span>Uncertainty Quantification & Probabilistic Inference</span>
+            <img class="service-icon small" src="icons/gaussian_40x40.svg" alt="">
+            <span>Uncertainty Quantification &amp; Probabilistic Inference</span>
             <span class="plus-sign">+</span>
           </div>
           <div class="item-content">
             <div class="item-detail">
-              <img class="service-image large" src="icons/gaussian_240x160.svg" alt="Quantitative Modeling Illustration">
+              <img class="service-image large" src="icons/gaussian_240x160.svg" alt="Uncertainty quantification illustration">
               <div class="text-block">
-                <p> <strong>Predictions without uncertainty are incomplete.</strong></p>
-                <p>We go beyond point estimates to deliver confidence. We specialize in quantifying how much trust you can place in your numerical models and machine learning predictions. Using advanced techniques in Bayesian inference, stochastic sampling, and uncertainty quantification, we help you capture uncertainty from parameter calibration to predictive distributions.</p>
-                <p>Our methods go beyond in-sample fit, addressing out-of-sample generalization and rare-event analysis. Whether you're solving PDEs with uncertain inputs or deploying ML models in high-risk settings, our probabilistic approach delivers predictions that are robust, transparent, and decision-ready.</p>
+                <p><strong>Predictions without uncertainty are incomplete.</strong></p>
+                <p>We go beyond point estimates to deliver confidence — quantifying how much trust you can place in your numerical models and ML predictions. Using Bayesian inference, stochastic sampling, and uncertainty quantification, we capture uncertainty from parameter calibration to predictive distributions.</p>
+                <p>Our methods address out-of-sample generalization and rare-event analysis. Whether you're solving PDEs with uncertain inputs or deploying ML in high-risk settings, our probabilistic approach delivers predictions that are robust, transparent, and decision-ready.</p>
               </div>
             </div>
           </div>
@@ -160,68 +222,81 @@
 
         <li class="expandable-item" role="button" aria-expanded="false">
           <div class="item-header">
-            <img class="service-icon small" src="icons/GPU_40x40.svg" alt="GPU Icon">
-            <span>GPU (CUDA) & HPC Integration</span>
+            <img class="service-icon small" src="icons/GPU_40x40.svg" alt="">
+            <span>GPU (CUDA) &amp; HPC Integration</span>
             <span class="plus-sign">+</span>
           </div>
           <div class="item-content">
             <div class="item-detail">
-              <img class="service-image large" src="icons/GPU_240x160.svg" alt="GPU Illustration">
+              <img class="service-image large" src="icons/GPU_240x160.svg" alt="GPU and HPC illustration">
               <div class="text-block">
                 <p><strong>Speed is strategy.</strong></p>
-                <p>In modern computational science and machine learning, performance isn't optional - it's foundational. At Open Numerics, we help you unlock the full power of your hardware by accelerating your models and simulations with GPU computing, CUDA programming, and high-performance computing (HPC) techniques.</p>
-                <p>From custom CUDA kernels and GPU-enabled machine learning to parallel solvers and large-scale simulation pipelines, we optimize your code to make the most of modern architectures. Whether you're handling terabytes of data, simulating PDEs at scale, or deploying ML workflows using Slurm, we create solutions tailored for performance, efficiency, and scalability.</p>
+                <p>In modern computational science and machine learning, performance is foundational. We help you unlock the full power of your hardware by accelerating models and simulations with GPU computing, CUDA programming, and high-performance computing.</p>
+                <p>From custom CUDA kernels and GPU-enabled ML to parallel solvers and large-scale pipelines, we optimize your code for modern architectures. Whether you're handling terabytes of data, simulating PDEs at scale, or running ML workflows on Slurm, we build for performance, efficiency, and scalability.</p>
               </div>
             </div>
           </div>
         </li>
-       
+
         <li class="expandable-item" role="button" aria-expanded="false">
           <div class="item-header">
-            <img class="service-icon small" src="icons/cloud_40x40.svg" alt="Quantitative Modeling Icon">
+            <img class="service-icon small" src="icons/cloud_40x40.svg" alt="">
             <span>Onsite or Hosted Deployments</span>
             <span class="plus-sign">+</span>
           </div>
           <div class="item-content">
             <div class="item-detail">
-              <img class="service-image large" src="icons/cloud_240x160.svg" alt="Quantitative Modeling Illustration">
+              <img class="service-image large" src="icons/cloud_240x160.svg" alt="Deployment illustration">
               <div class="text-block">
                 <p><strong>Seamless deployment, your way.</strong></p>
-                <p>We don't just build models, we help you integrate them into your workflow. Whether you need an onsite installation, a private cloud setup, or a lightweight containerized service, we deliver solutions where and how you need them.</p>
-                <p>Our deployment support spans everything from local execution to scalable hosted platforms. We work closely with your team to ensure smooth integration with your existing systems, whether you're running simulations, launching ML services, or automating pipelines. Flexibility is built into every step so our tools are ready to deliver value from day one.</p>
+                <p>We don't just build models — we help you integrate them into your workflow. Whether you need an onsite installation, a private cloud setup, or a lightweight containerized service, we deliver where and how you need it.</p>
+                <p>Our deployment support spans local execution to scalable hosted platforms. We work closely with your team for smooth integration with existing systems — running simulations, launching ML services, or automating pipelines — so our tools deliver value from day one.</p>
               </div>
             </div>
           </div>
         </li>
       </ul>
+
+      <p class="services-note">
+        Engagements include complete standalone solutions, onsite integration with maintenance,
+        and features on demand — all tailored to your needs and form of execution.
+      </p>
     </div>
-    <div style="height: 0.5rem;"></div>
-    <p>Our package includes complete standalone solutions, seamless onsite integration with maintenance, and features on demand; all tailored to your needs and form of execution.</p>
-  </div>
   </section>
 
-  <!-- Panel 4: Previous Projects -->
-  <section id="experience" class="panel beige">
-    <h1 class="panel-title">Solutions in Action</h1>
-    <div id="projects-grid"></div>
+  <!-- Solutions in action -->
+  <section id="experience" class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Our work</span>
+        <h2 class="section-title">Solutions in action</h2>
+        <p class="section-sub">A selection of projects we've advised on, built, and deployed.</p>
+      </div>
+      <div id="projects-grid"></div>
+    </div>
   </section>
-  <script src="experience.js"></script>
 
-  <!-- Panel 5: How to get in touch -->
-  <section id="contact" class="panel teal">
-  <h1 class="panel-title">Get in Touch</h1>
-  <div class="panel-content">
-      Think we can unlock value for your business? Reach out at <a href="mailto:info@opennumerics.com">info@opennumerics.com</a>!
-  </div>
-  <img src="/images/Open_Numerics_Banner.png" alt="Open Numerics logo" class="contact-logo" />
-</section>
-
-<script src="services.js"></script>
-</body>
-</html>
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container contact">
+      <div class="section-head">
+        <span class="eyebrow">Get in touch</span>
+        <h2 class="section-title">Think we can unlock value for your business?</h2>
+      </div>
+      <p>
+        Reach out at
+        <a href="mailto:info@opennumerics.com">info@opennumerics.com</a>
+        and let's talk about your toughest computational challenge.
+      </p>
+      <img src="/images/Open_Numerics_Banner.png" alt="Open Numerics" class="contact-logo" />
+    </div>
+  </section>
 
   <footer class="footer">
     <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>
   </footer>
+
+  <script src="experience.js"></script>
+  <script src="services.js"></script>
 </body>
 </html>

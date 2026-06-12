@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <title>Open Numerics - Digital Twin for Linear Elasticity</title>
   <link rel="stylesheet" href="/style.css" />
 
@@ -15,20 +18,30 @@
 </head>
 
 <body>
-  <script src="/inject-partials.js"></script>
-  <div id="navbar-placeholder"></div>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#approach">How we work</a>
+        <a href="/#services">What we offer</a>
+        <a href="/#experience">Our work</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <section id="neural-operator-elasticity" class="panel beige">
-  <div class="panel-content">
+  <main class="article">
+  <div class="prose">
     <h2>Learning to Solve Elasticity Equations with Neural Operators</h2>
     <p class="intro-text">Structural simulations are essential in engineering and material science. From stress analysis in mechanical parts to predicting deformation in biomaterials, knowing how a material will deform under a load
       without doing the actual experiment can significantly speed up the design cycle. Traditional finite-element solvers are highly accurate but computationally expensive when simulating the same equations under many different loads material properties.</p>
 
     <p class="intro-text">At Open Numerics, we've developed a Neural Operator (NO) that can <strong>instantly predict the complete material displacement</strong> under any applied stress. This approach bypasses the need to re-solve the PDE for each new input.</p>
 
-    <img src="/images/deeponet_elasticity.png"
-     alt="DeepONet architecture with convolutional branch"
-     style="display: block; max-width: 100%; margin: 2rem auto;" />
+    <figure class="figure figure--wide">
+      <img src="/images/deeponet_elasticity.png"
+           alt="DeepONet architecture with a convolutional branch network." />
+    </figure>
 
     <p class="intro-text">Our Neural Operator is based on a <strong>DeepONet architecture</strong> (see picture above) with additional convolutional layers in the branch network. Convolutions allow the branch to efficiently encode spatial patterns in the input load. The trunk network learns a compact representation of spatial locations, enabling rapid evaluation of the displacement field over the whole domain.</p>
 
@@ -38,11 +51,10 @@
       This makes it ideal for real-time simulation, optimization, and uncertainty quantification tasks.
     </p>
 
-    <div style="display: flex; justify-content: center; gap: 1rem; margin: 0.5rem 0;">
-    <img src="/images/u_displacement.png"
-     alt="Finite-Element Method versus DeepONet for Linear Elasticity"
-     style="display: block; max-width: 80%; margin: 2rem auto;" />
-    </div>
+    <figure class="figure figure--medium">
+      <img src="/images/u_displacement.png"
+           alt="Finite-element method versus DeepONet for linear elasticity." />
+    </figure>
 
     <p class="intro-text">
       This model is currently being used to determine the maximal stress loads of new materials multiple times a day. It allows researchers to speed up the simulation part of the design cycle more than 10x. We deployed this model on our client's servers and implement regular updates.
@@ -52,7 +64,7 @@
   <div class="back-button-wrapper">
     <a href="/#experience" class="button-link">← Back to our Solutions</a>
   </div>
-  </section>
+  </main>
 
     <footer class="footer">
     <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>

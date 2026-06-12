@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <title>Open Numerics - Generative AI for Porous Media</title>
   <link rel="stylesheet" href="/style.css" />
 
@@ -29,11 +32,20 @@
 </head>
 
 <body>
-  <script src="/inject-partials.js"></script>
-  <div id="navbar-placeholder"></div>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#approach">How we work</a>
+        <a href="/#services">What we offer</a>
+        <a href="/#experience">Our work</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <section id="SGM" class="panel beige">
-    <div class="panel-content">
+  <main class="article">
+    <div class="prose">
       <h2>Fast Exploration of Realistic Designs using Score-based Generative Models</h2>
 
       <p class="intro-text">Many engineering workflows require <b>rapid generation of physically realistic designs</b>, not just a single high-accuracy simulation. 
@@ -50,9 +62,8 @@
 
       <p class="intro-text">
         The figure below shows the porosity field, ion concentration and potential and how they link to the macroscopic operating conditions.
-        <img src="/images/sgm/sgm_setup.png"
-           alt="Battery Model and Setup."
-           style="display: block; max-width: 80%; margin: 2rem auto;" />
+        <img class="img--medium" src="/images/sgm/sgm_setup.png"
+           alt="Battery model and setup." />
       </p>
 
       <p class="intro-text">   
@@ -83,17 +94,15 @@
         Spatial structure is handled by convolutional networks, while global parameters and time-like diffusion variables are injected through feature-wise modulation (FiLM). 
         The neural network architecture is displayed below.
 
-        <img src="/images/sgm/sgm_network.png"
-           alt="Score-based Neural Network Architecture"
-           style="display: block; max-width: 80%; margin: 2rem auto;" />
+        <img class="img--medium" src="/images/sgm/sgm_network.png"
+           alt="Score-based neural network architecture." />
       </p>
 
       <h3>The Result</h3>
       <p class="intro-text"> Once trained, the model produces diverse, physically plausible designs <b>orders of magnitude faster than direct physics simulations</b>. 
         Even more, our approach captures the uncertainty very well. The final figure shows the mean and 95% confidence interval of 500 realizations of the SGM
-        <img src="/images/sgm/CI.png"
-           alt="The SGM perfectly captures uncertainty around the mean."
-           style="display: block; max-width: 80%; margin: 2rem auto;" />
+        <img class="img--medium" src="/images/sgm/CI.png"
+           alt="The SGM captures uncertainty around the mean." />
         This project demonstrates how <b>generative AI can be used in scientific computing, offering a powerful new approach for fast design exploration!</b>
       </p>
     </div>
@@ -101,7 +110,7 @@
     <div class="back-button-wrapper">
     <a href="/#experience" class="button-link">← Back to our Solutions</a>
   </div>
-  </section>
+  </main>
 
   <footer class="footer">
     <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics LLC</p>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <title>Open Numerics - Micro-Macro MCMC Sampling</title>
   <link rel="stylesheet" href="/style.css" />
 
@@ -15,27 +18,34 @@
 </head>
 
 <body>
-  <script src="/inject-partials.js"></script>
-  <div id="navbar-placeholder"></div>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#approach">How we work</a>
+        <a href="/#services">What we offer</a>
+        <a href="/#experience">Our work</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <section id="pycont" class="panel beige">
-  <div class="panel-content">
+  <main class="article">
+  <div class="prose">
     <h2>Improved Sampling for Molecular Structure Prediction</h2>
     <p class="intro-text">Molecular dynamics is a cornerstone of modern science and engineering, used to study everything from protein folding and chemical reactions to materials behavior and nanotechnology. But at its core lies a fundamental challenge: these systems evolve on <strong>rugged, high-dimensional energy landscapes</strong>, where important transitions are rare and hard to capture.</p>
 
     <img src="/images/alanine_dipeptide_cropped.png"
-     alt="New Protein Structure Predictions"
-     style="width: auto; max-height: 400px; object-fit: cover; object-position: top center; display: block; margin: 0 auto;"/>
+         alt="New protein structure predictions" />
     
     <p class="intro-text">Popular sampling methods like Markov chain Monte Carlo (MCMC) often struggle in this setting. They tend to get trapped in local states, requiring huge amounts of compute by relying on exceedingly rare transitions to explore the full range of possible system behaviors.</p>
 
     <p class="intro-text">At Open Numerics, we developed a powerful solution: <strong>the micro-macro Markov chain Monte Carlo (mM-MCMC) method</strong>. This technique speeds up sampling by combining coarse, system-level proposals with fine-grained reconstruction. These steps allow the algorithm to take large, informed steps accross high energy barriers.</p>
 
-    <div style="display: flex; justify-content: center; gap: 4rem; margin: 2rem 0;">
-    <img src="/images/dists.png"
-     alt="Solution branches of the Pitchfork Bifurcatioh"
-     style="display: block; max-width: 60%; margin: 2rem auto;" />
-    </div>
+    <figure class="figure figure--narrow">
+      <img src="/images/dists.png"
+           alt="Sampled distributions from micro-macro MCMC." />
+    </figure>
 
     <p class="intro-text">Micro-macro MCMC is especially effective in problems involving rare events, meta-stability, or slow collective motions. We have successfully used it to improve and accelerate simulations of many molecular systems and even for <strong>predicing new protein structures</strong>!</p>
   </div>
@@ -43,7 +53,7 @@
   <div class="back-button-wrapper">
     <a href="/#experience" class="button-link">← Back to our Solutions</a>
   </div>
-  </section>
+  </main>
 
     <footer class="footer">
     <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>

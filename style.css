@@ -10,6 +10,8 @@
   --teal-tint:   #eef5f3;   /* faint teal wash for alt sections */
   --gold:        #d4b574;
   --gold-dark:   #b9974d;
+  --gold-tint:   #fbf5e6;   /* soft gold wash for cards */
+  --gold-border: #ecdfc2;
 
   --ink:    #1c2b2e;        /* headings / body */
   --muted:  #5d6e70;        /* secondary text */
@@ -235,6 +237,14 @@ strong { color: inherit; font-weight: 700; }
   font-size: 1rem;
 }
 
+.metrics-note {
+  text-align: center;
+  color: var(--muted);
+  max-width: 720px;
+  margin: 2.25rem auto 0;
+  font-size: 1.05rem;
+}
+
 /* ---------------------------------------------------------------------------
    Two-track: How we work
 --------------------------------------------------------------------------- */
@@ -323,8 +333,8 @@ strong { color: inherit; font-weight: 700; }
 }
 
 .expandable-item {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--gold-tint);
+  border: 1px solid var(--gold-border);
   border-radius: var(--radius);
   margin: 0.9rem 0;
   padding: 1.1rem 1.4rem;

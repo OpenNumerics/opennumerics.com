@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- connections from the agent to its tools -->
+  <g stroke="#63a69f" stroke-width="3" stroke-linecap="round">
+    <line x1="60" y1="60" x2="26" y2="30"/>
+    <line x1="60" y1="60" x2="94" y2="30"/>
+    <line x1="60" y1="60" x2="30" y2="92"/>
+    <line x1="60" y1="60" x2="90" y2="92"/>
+  </g>
+  <!-- tool nodes -->
+  <g fill="#3f928a">
+    <circle cx="26" cy="30" r="9"/>
+    <circle cx="94" cy="30" r="9"/>
+    <circle cx="30" cy="92" r="9"/>
+    <circle cx="90" cy="92" r="9"/>
+  </g>
+  <!-- the agent -->
+  <circle cx="60" cy="60" r="19" fill="#2f6f68"/>
+  <!-- spark / reasoning -->
+  <path d="M60 49 l3.2 7.8 7.8 3.2 -7.8 3.2 -3.2 7.8 -3.2 -7.8 -7.8 -3.2 7.8 -3.2z" fill="#d4b574"/>
+</svg>

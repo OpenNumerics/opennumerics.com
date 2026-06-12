@@ -361,6 +361,7 @@ strong { color: inherit; font-weight: 700; }
 .service-icon.small {
   width: 46px;
   height: 46px;
+  object-fit: contain;   /* keep each icon's native aspect ratio (no stretch) */
   flex-shrink: 0;
   transition: opacity 0.3s ease;
 }
@@ -400,6 +401,7 @@ strong { color: inherit; font-weight: 700; }
 .service-image.large {
   width: 240px;
   height: 160px;
+  object-fit: contain;   /* keep native aspect ratio (no stretch) */
   flex-shrink: 0;
 }
 .expandable-item:not(.open) .service-image.large { display: none; }

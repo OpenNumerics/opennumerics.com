@@ -127,7 +127,7 @@ strong { color: inherit; font-weight: 700; }
 }
 .nav__brand:hover { color: var(--teal); }
 
-.nav__links { display: flex; gap: 1.75rem; }
+.nav__links { display: flex; gap: 1.75rem; margin-left: auto; margin-right: 1.75rem; }
 
 .nav__links a {
   color: var(--muted);
@@ -163,6 +163,9 @@ strong { color: inherit; font-weight: 700; }
   border: 1.5px solid var(--border);
 }
 .btn--ghost:hover { border-color: var(--teal); color: var(--teal-dark); }
+
+.btn--sm { padding: 0.5rem 1rem; font-size: 0.9rem; }
+.btn--lg { padding: 0.95rem 1.9rem; font-size: 1.05rem; }
 
 /* ---------------------------------------------------------------------------
    Hero
@@ -204,6 +207,63 @@ strong { color: inherit; font-weight: 700; }
   flex-wrap: wrap;
 }
 
+/* Outcome pills directly under the hero CTAs — what the client buys, in four
+   words each. Deliberately not links: they set expectations, not navigation. */
+.outcomes {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0;
+  margin: 2.5rem 0 0;
+}
+
+.outcomes li {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--teal-dark);
+  background: var(--teal-tint);
+  border: 1px solid #d9e8e4;
+  border-radius: 999px;
+  padding: 0.45rem 1.1rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Industries band — "is this company for me?"
+--------------------------------------------------------------------------- */
+.industries {
+  border-block: 1px solid var(--border);
+  background: var(--bg-alt);
+  padding: 2.25rem 0;
+}
+
+.industries__label {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 1.1rem;
+}
+
+.industries__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.industries__list li {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ink);
+}
+
 /* ---------------------------------------------------------------------------
    Metrics band
 --------------------------------------------------------------------------- */
@@ -213,14 +273,35 @@ strong { color: inherit; font-weight: 700; }
   gap: 1.5rem;
 }
 
+/* Each metric links through to its case study — the number earns the click,
+   the case study justifies the number. */
 .metric {
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2rem 1.5rem;
   text-align: center;
   box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  transition: transform 0.2s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
+.metric:hover {
+  transform: translateY(-4px);
+  border-color: var(--teal);
+  box-shadow: var(--shadow-md);
+  color: var(--ink);
+}
+
+.metric__link {
+  margin-top: auto;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--teal);
+}
+.metric:hover .metric__link { color: var(--teal-dark); }
 
 .metric__num {
   font-size: 2.75rem;
@@ -246,28 +327,36 @@ strong { color: inherit; font-weight: 700; }
 }
 
 /* ---------------------------------------------------------------------------
-   Two-track: How we work
+   Offers — the four productized services
 --------------------------------------------------------------------------- */
-.tracks {
+.offers {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
-.track {
+.offer {
+  display: flex;
+  flex-direction: column;
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 2.25rem;
   box-shadow: var(--shadow-sm);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.track--advisory { border-top: 4px solid var(--gold); }
-.track--build    { border-top: 4px solid var(--teal); }
+.offer:hover { border-color: var(--teal); box-shadow: var(--shadow-md); }
 
-.track__tag {
-  display: inline-block;
+/* The audit is the funnel entrance, so it gets the gold treatment and the
+   "Start here" tag. The other three are peers of each other, not of it. */
+.offer--primary {
+  background: var(--gold-tint);
+  border-color: var(--gold-border);
+}
+.offer--primary:hover { border-color: var(--gold-dark); }
+
+.offer__tag {
+  align-self: flex-start;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -275,22 +364,29 @@ strong { color: inherit; font-weight: 700; }
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
   margin-bottom: 1rem;
+  background: var(--teal-tint);
+  color: var(--teal-dark);
 }
-.track--advisory .track__tag { background: #f6edd9; color: var(--gold-dark); }
-.track--build    .track__tag { background: var(--teal-tint); color: var(--teal-dark); }
+.offer--primary .offer__tag { background: #f6edd9; color: var(--gold-dark); }
 
-.track h3 { font-size: 1.4rem; }
-.track > p { color: var(--muted); }
+.offer h3 { font-size: 1.4rem; margin-bottom: 0.5rem; }
 
-.track__list { list-style: none; padding: 0; margin: 1.25rem 0 0; }
-.track__list li {
+.offer__promise {
+  font-size: 1.08rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.offer__list { list-style: none; padding: 0; margin: 0 0 1.25rem; }
+.offer__list li {
   position: relative;
   padding-left: 1.6rem;
-  margin: 0.55rem 0;
-  color: var(--ink);
+  margin: 0.5rem 0;
+  color: var(--muted);
   font-size: 1rem;
 }
-.track__list li::before {
+.offer__list li::before {
   content: "";
   position: absolute;
   left: 0;
@@ -301,126 +397,121 @@ strong { color: inherit; font-weight: 700; }
   background: var(--teal);
   transform: rotate(45deg);
 }
-.track--advisory .track__list li::before { background: var(--gold); }
+.offer--primary .offer__list li::before { background: var(--gold); }
 
-.tracks__note {
-  text-align: center;
+.offer__meta {
+  margin: auto 0 0;
+  padding-top: 0.5rem;
+  font-size: 0.92rem;
+  font-weight: 600;
   color: var(--muted);
-  max-width: 720px;
-  margin: 2.25rem auto 0;
+  border-top: 1px solid var(--border);
 }
+.offer--primary .offer__meta { border-top-color: var(--gold-border); }
 
 /* ---------------------------------------------------------------------------
-   Vision
+   CTA bands — the shared "book a call" blocks
 --------------------------------------------------------------------------- */
-.vision { max-width: 760px; margin: 0 auto; text-align: center; }
-.vision p { font-size: 1.2rem; color: var(--ink); }
-.vision .lead {
-  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
-  font-weight: 700;
-  color: var(--teal-dark);
-}
+.cta-band { text-align: center; }
 
-/* ---------------------------------------------------------------------------
-   Services accordion
---------------------------------------------------------------------------- */
-.services-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-width: 880px;
-  margin: 0 auto;
-}
-
-.expandable-item {
-  background: var(--gold-tint);
-  border: 1px solid var(--gold-border);
-  border-radius: var(--radius);
-  margin: 0.9rem 0;
-  padding: 1.1rem 1.4rem;
-  box-shadow: var(--shadow-sm);
-  cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
-}
-.expandable-item:hover {
-  border-color: var(--teal);
-  box-shadow: var(--shadow-md);
-}
-.expandable-item.open { border-color: var(--teal); }
-
-.item-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  font-weight: 700;
+.cta-band__text {
   font-size: 1.15rem;
-  color: var(--ink);
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto 2rem;
 }
-.item-header span:first-of-type { flex: 1; }
 
-.service-icon.small {
+.cta-band__alt {
+  margin: 1.5rem 0 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------------
+   Technical expertise grid
+
+   This used to be a click-to-expand accordion. It now sits *after* the offers
+   and case studies, where its job is evidence rather than pitch — so it needs
+   to be skimmable in ten seconds, not unfolded one panel at a time.
+--------------------------------------------------------------------------- */
+/* Flex rather than grid: there are seven cards across three columns, so the
+   last row is a single orphan. Flex + centring keeps it balanced. */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.skill {
+  flex: 0 1 calc((100% - 3rem) / 3);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.skill img {
   width: 46px;
   height: 46px;
   object-fit: contain;   /* keep each icon's native aspect ratio (no stretch) */
-  flex-shrink: 0;
-  transition: opacity 0.3s ease;
-}
-/* on expand, the small icon fades out and its larger twin appears in the
-   panel below — so the icon reads as "growing" into the detail view */
-.expandable-item.open .service-icon.small { opacity: 0; }
-
-.plus-sign {
-  font-size: 1.6rem;
-  font-weight: 400;
-  color: var(--teal);
-  line-height: 1;
-  transition: transform 0.3s ease;
-}
-.expandable-item.open .plus-sign { transform: rotate(45deg); }
-
-.item-content {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
-}
-.expandable-item.open .item-content {
-  max-height: 1200px;
-  opacity: 1;
+  margin-bottom: 0.9rem;
 }
 
-.item-detail {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  margin-top: 1.4rem;
-}
+.skill h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
 
-/* the tile image is the same artwork as the icon, larger — so expanding
-   reads as the icon "growing" into the panel */
-.service-image.large {
-  width: 240px;
-  height: 160px;
-  object-fit: contain;   /* keep native aspect ratio (no stretch) */
-  flex-shrink: 0;
-}
-.expandable-item:not(.open) .service-image.large { display: none; }
-
-.text-block { flex: 1; }
-.text-block p {
-  font-size: 1.02rem;
+.skill p {
+  margin: 0;
+  font-size: 0.98rem;
   color: var(--muted);
-  margin: 0 0 0.9rem;
 }
-.text-block p:first-child strong { color: var(--ink); font-size: 1.1rem; }
 
 .custom { transform: rotate(-45deg); }
 
-.services-note {
-  text-align: center;
+/* ---------------------------------------------------------------------------
+   Engagement process
+--------------------------------------------------------------------------- */
+.process {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.process__step {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.process__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: var(--teal-tint);
+  color: var(--teal-dark);
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.process__step h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+
+.process__step p {
+  margin: 0;
+  font-size: 0.96rem;
   color: var(--muted);
-  max-width: 720px;
-  margin: 2.5rem auto 0;
 }
 
 /* ---------------------------------------------------------------------------
@@ -477,9 +568,7 @@ strong { color: inherit; font-weight: 700; }
 /* ---------------------------------------------------------------------------
    Contact
 --------------------------------------------------------------------------- */
-.contact { text-align: center; }
-.contact p { font-size: 1.25rem; max-width: 620px; margin: 0 auto 2rem; }
-.contact-logo { display: block; margin: 2.5rem auto 0; width: min(420px, 70vw); }
+.contact-logo { display: block; margin: 3rem auto 0; width: min(420px, 70vw); }
 
 /* ---------------------------------------------------------------------------
    Footer
@@ -550,6 +639,23 @@ strong { color: inherit; font-weight: 700; }
   color: var(--muted);
 }
 
+/* Booking prompt at the end of a case study — the highest-intent moment on the
+   site, since the reader has just finished the proof. */
+.case-cta {
+  max-width: 760px;
+  margin: 4rem auto 0;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background: var(--teal-tint);
+  border-radius: var(--radius);
+}
+.case-cta h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.6rem; }
+.case-cta p {
+  color: var(--muted);
+  max-width: 520px;
+  margin: 0 auto 1.75rem;
+}
+
 .back-button-wrapper {
   text-align: center;
   margin: 3rem auto 1rem;
@@ -571,19 +677,30 @@ mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
 /* ---------------------------------------------------------------------------
    Responsive
 --------------------------------------------------------------------------- */
+@media (max-width: 980px) {
+  .skill   { flex-basis: calc((100% - 1.5rem) / 2); }
+  .process { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 860px) {
   .metrics       { grid-template-columns: 1fr; }
-  .tracks        { grid-template-columns: 1fr; }
+  .offers        { grid-template-columns: 1fr; }
   #projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav__links    { gap: 1.1rem; margin-right: 1.1rem; }
+  .nav__links a  { font-size: 0.88rem; }
 }
 
 @media (max-width: 640px) {
   body { font-size: 17px; }
   .section { padding: 4rem 0; }
-  .nav__links { gap: 1rem; font-size: 0.85rem; }
-  .nav__links a { font-size: 0.85rem; }
+  /* Drop the nav links on phones and keep only brand + booking button — the
+     page is a single scroll anyway, and the CTA is what matters here. */
+  .nav__links    { display: none; }
+  .skill         { flex-basis: 100%; }
+  .process       { grid-template-columns: 1fr; }
   #projects-grid { grid-template-columns: 1fr; }
-  .item-detail { flex-direction: column; gap: 1rem; }
-  .service-image.large { width: 100%; height: auto; }
+  .hero__actions .btn { width: 100%; }
+  .industries__list { gap: 0.5rem 1.25rem; }
+  .industries__list li { font-size: 0.98rem; }
   .figure--medium img, .figure--narrow img { max-width: 100%; }
 }

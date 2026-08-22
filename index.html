@@ -8,13 +8,7 @@
   <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/style.css" />
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HYR12B0NWT"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HYR12B0NWT');
-  </script>
+  <script src="/consent.js"></script>
 </head>
 
 <body>
@@ -27,6 +21,7 @@
         <a href="#results">Results</a>
         <a href="#expertise">Expertise</a>
         <a href="#experience">Our work</a>
+        <a href="/about.html">About</a>
       </nav>
       <a class="btn btn--primary btn--sm" data-book data-cta="nav">Book a call</a>
     </div>
@@ -303,7 +298,41 @@
     </div>
   </section>
 
-  <!-- 9. Contact -->
+  <!-- 9. Who you'd be working with — the last objection before the CTA is
+       "who am I actually going to be on this call with?" -->
+  <section id="about" class="section section--alt">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Who you'd be working with</span>
+        <h2 class="section-title">A small practice, not a staffing agency</h2>
+      </div>
+
+      <!-- TODO: add /images/hannes.jpg (square, ~600×600). The tag hides itself
+           until the file exists, so this is safe to deploy as-is. -->
+      <div class="bio bio--compact">
+        <img class="bio__photo" src="/images/hannes.jpg" alt="Hannes Vandecasteele"
+             onerror="this.style.display='none'" />
+
+        <div class="bio__body">
+          <h3>Hannes Vandecasteele</h3>
+          <p class="bio__role">Founder — Open Numerics, LLC</p>
+
+          <!-- TODO: replace with two or three sentences of your own. The full
+               version lives on /about.html — keep this one short. -->
+          <p>
+            [Two or three sentences: your background, the problems you've spent
+            your career on, and what a client gets from working with you directly.
+            The person who answers your booking request is the person who does the
+            work — say so here.]
+          </p>
+
+          <a href="/about.html" class="bio__more" data-cta="about-link">More about Hannes →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Contact -->
   <section id="contact" class="section section--tint cta-band">
     <div class="container">
       <span class="eyebrow">Get started</span>
@@ -322,6 +351,11 @@
   </section>
 
   <footer class="footer">
+    <nav class="footer__links">
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="mailto:info@opennumerics.com">info@opennumerics.com</a>
+    </nav>
     <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>
   </footer>
 

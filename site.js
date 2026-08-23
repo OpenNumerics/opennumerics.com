@@ -10,8 +10,32 @@
    navbar, hero, services, contact and case-study CTAs all follow from this one
    constant. Change it here and it changes everywhere.
 
-   Events sent to GA4 are listed in README.md. `booking_completed` is the one
-   that matters — mark it as a key event in the GA4 admin.
+   Events sent to GA4, all via track() so they carry a page_type of
+   home / case_study / about / privacy:
+
+     book_click        a booking CTA was pressed        (location)
+     booking_started   the Cal calendar rendered        (method)
+     booking_completed A SLOT WAS ACTUALLY BOOKED       (method)
+     booking_error     the Cal embed failed to load     (method)
+     email_click       a mailto: link                   (address)
+     case_study_click  a results tile or project card   (link, source)
+     nav_click         a navbar link                    (label)
+     outbound_click    any link leaving the site        (domain, link)
+     cta_click         other tagged CTAs                (location)
+     section_view      a section scrolled into view     (section)
+     scroll_depth      25 / 50 / 75 / 100%              (percent)
+     engaged_time      15/30/60/120/300s, tab-aware     (seconds)
+
+   `booking_completed` is the only one that means a booked call, so mark it as
+   a key event: GA4 -> Admin -> Data display -> Events -> find it -> "Mark as
+   key event". It only shows up there after firing once, so make a test booking
+   first (then cancel it) — or register the name up front under Admin -> Key
+   events -> New key event. Do NOT also mark book_click, or you will count two
+   conversions per booking.
+
+   Note: analytics only runs after a visitor accepts the consent banner (see
+   consent.js), so these numbers undercount real traffic. Fine for comparing
+   periods and funnel steps to each other; not a true visitor count.
 --------------------------------------------------------------------------- */
 const CAL_LINK = "hannes-vandecasteele-ttuhej/30min";
 

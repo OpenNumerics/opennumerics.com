@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <title>Open Numerics - Robust Bayesian Optimization</title>
+  <link rel="stylesheet" href="/style.css" />
+
+  <script src="/consent.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script"
+          async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#services">How we help</a>
+        <a href="/#experience">Our work</a>
+        <a href="/about.html">About</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" data-book data-cta="nav">Book a call</a>
+    </div>
+  </header>
+
+<main class="article">
+  <div class="prose">
+    <h2>Autoresearch Agent for faster Model Deployment</h2>
+    <p class="intro-text">This project is one of the first research agents in existence.</p>
+
+    <p class="intro-text">Our client is a research firm specializing in building machine-learning models for healthcare applications. Their new line of models is based on the transformer architecture (the technology behind LLMs) for time-series prediction of disease progression. </p>
+    
+    <p class="intro-text">However, their architecture contains many hyperparameters, and their precise values have a big impact on the eventual accuracy of the model. These hyperparamters include regularization, internal state-space dimension, learning-rate schedules, number of layers, and some extra parameters in the loss function. In total there were 9 hyperparameters, too many to run a systematic grid search.</p>
+    
+    <h3> Our Contribution</h3>
+    <p class="intro-text">We built an *autoresearch agent* that automatically traverses the hyperparameter search space to find the model with the lowest possible validation loss. The agent knows the neural (transformer) architecture, and what the model is trying to achieve, medically speaking. The agent first proposes a set of initial hyperparameter values and trains the model. Based on the loss progression, the training-validation gap and other training artifacts, it reasons through the effects of its choice and proposes a second set of values. The agent iterations until the validation loss is minimized. </p>
+
+    <img src="/images/agentic_loop.png"
+         alt="The autoresearch agentic loop" />
+
+    <h3> The Result for our Client </h3>
+    <p class="intro-text">The autoresearch agent can traverse the search space much faster than a traditional hyperparameter sweep. It found good values for all parameters in just 10 iterations. For reference, a systematic grid search in 9-dimensional spaces easily takes months, our agent did it in eight days. </p>
+
+    <h3> Impact </h3>
+    <p class="intro-text"> The client was able to release their new disease-progression predictor much faster due to the autoresearch agent. A clear value addition of agentic AI.</p>
+
+    
+  <section id="case-cta" class="case-cta">
+    <h2>Facing a similar bottleneck?</h2>
+    <p>
+      Book a free 30-minute consultation. Bring your slowest workflow and we'll tell you
+      what we'd do about it.
+    </p>
+    <a class="btn btn--primary btn--lg" data-book data-cta="case-study">Book a 30-minute consultation</a>
+  </section>
+
+  <div class="back-button-wrapper">
+    <a href="/#experience" class="button-link">← Back to our Solutions</a>
+  </div>
+  </main>
+
+
+
+
+  <footer class="footer">
+    <nav class="footer__links">
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="mailto:info@opennumerics.com">info@opennumerics.com</a>
+    </nav>
+    <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>
+  </footer>
+  <script src="/site.js"></script>
+</body>
+
+</html>

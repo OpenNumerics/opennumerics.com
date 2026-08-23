@@ -36,6 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "New multifidelity sampling algorithm for improved molecular structure predition",
       image: "images/alanine_dipeptide.png"
     },
+    {
+      title: "Agentic AI for Automated Research",
+      link: "/solutions/agent.html",
+      description: "An agent that determines the optimal model parameters by reasoning",
+      image: "images/agentic_loop.png"
+    },
   ];
 
   const gridContainer = document.getElementById("projects-grid");

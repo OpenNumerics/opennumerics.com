@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>You're booked — Open Numerics</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <!-- Runs BEFORE consent.js, and therefore before Google Analytics loads.
+
+       Cal.com's "Forward parameters" option can append the attendee's name and
+       email to this URL. GA4 records the full page_location including the query
+       string, so leaving them there would push personal data into Analytics,
+       which breaks Google's own terms. This lifts the two harmless values we
+       actually need into a variable and then wipes the query string entirely,
+       so the URL analytics sees is just /booked.html. -->
+  <script>
+    (function () {
+      var p = new URLSearchParams(location.search);
+      window.__booking = {
+        uid:  p.get("bookingUid") || p.get("uid") || "",
+        slug: p.get("eventTypeSlug") || ""
+      };
+      if (location.search) history.replaceState(null, "", location.pathname);
+    })();
+  </script>
+
+  <script src="/consent.js"></script>
+</head>
+
+<body data-page="booked">
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#services">How we help</a>
+        <a href="/#experience">Our work</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section booked">
+      <div class="container">
+        <span class="eyebrow">Confirmed</span>
+        <h1 class="section-title">You're booked. <span class="accent-gold">Talk soon.</span></h1>
+        <p class="booked__lead">
+          A calendar invite is on its way to your inbox, with a video link attached.
+        </p>
+
+        <div class="booked__prep">
+          <h2>To get the most out of the call</h2>
+          <p>
+            Come with one workflow in mind, ideally the slowest one. It helps if you can say
+            roughly how long it takes today, how often you run it, and what you have already
+            tried. If you have a profile, a benchmark or even a rough timing, bring it. We can
+            usually tell you within thirty minutes whether the bottleneck is worth attacking
+            and what we would do about it.
+          </p>
+          <p>
+            Nothing to prepare beyond that. If something comes up and you need to move the
+            call, use the reschedule link in the invite, or just reply to it.
+          </p>
+        </div>
+
+        <div class="booked__actions">
+          <a href="/#experience" class="btn btn--primary" data-cta="booked-work">Read a case study</a>
+          <a href="/" class="link-arrow" data-cta="booked-home">Back to the homepage</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <nav class="footer__links">
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="mailto:info@opennumerics.com">info@opennumerics.com</a>
+    </nav>
+    <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>
+  </footer>
+
+  <script src="/site.js"></script>
+</body>
+</html>

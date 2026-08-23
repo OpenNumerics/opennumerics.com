@@ -14,6 +14,7 @@
    home / case_study / about / privacy:
 
      book_click        a booking CTA was pressed        (location)
+     booking_completed A SLOT WAS ACTUALLY BOOKED       (method, event_type)
      email_click       a mailto: link                   (address)
      case_study_click  a results tile or project card   (link, source)
      nav_click         a navbar link                    (label)
@@ -23,16 +24,22 @@
      scroll_depth      25 / 50 / 75 / 100%              (percent)
      engaged_time      15/30/60/120/300s, tab-aware     (seconds)
 
-   IMPORTANT, on measuring bookings. The CTAs open cal.com in a new tab rather
-   than in an on-page popup, which is a deliberate choice, but it means we can no
-   longer see whether a booking completed: the confirmation happens on cal.com's
-   own origin, and a cross-origin tab cannot report back. So `book_click` is the
-   furthest down the funnel this file can measure. It counts intent, not calls.
+   How bookings are measured. The CTAs open cal.com in a new tab, so the booking
+   is confirmed on a different origin and cannot report back to the page the
+   visitor came from. Instead, the Cal.com event type is configured to redirect
+   to /booked.html once a slot is confirmed, and that page fires
+   `booking_completed`. So:
 
-   To recover the real conversion, set a "Redirect on booking" URL on the Cal.com
-   event type, pointing at a thank-you page on this domain, and fire the event
-   from that page. Until then, do not mark anything here as a GA4 key event and
-   expect it to mean a booked call.
+     book_click        counts calendar opens, i.e. intent. Overcounts.
+     booking_completed counts actual bookings. THIS is the conversion.
+
+   Required Cal.com setup, or booking_completed never fires:
+     Event type -> Advanced -> "Redirect on booking" ->
+       https://opennumerics.com/booked.html
+
+   Mark ONLY booking_completed as a GA4 key event: Admin -> Data display ->
+   Events -> Recent events tab -> find it -> star it. It only appears there
+   after firing once, so make a test booking first and then cancel it.
 
    Note: analytics only runs after a visitor accepts the consent banner (see
    consent.js), so these numbers undercount real traffic. Fine for comparing
@@ -55,12 +62,38 @@ function track(name, params) {
    Engagement wiring
 --------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
+  trackBookingCompleted();
   initBookingCtas();
   initLinkTracking();
   initSectionViews();
   initScrollDepth();
   initEngagedTime();
 });
+
+/* The conversion ------------------------------------------------------------
+   Cal.com redirects here after a slot is confirmed. The booking uid (when
+   Cal.com is set to forward parameters) is lifted out of the query string by an
+   inline script in booked.html before analytics loads, and is used here only to
+   keep a refresh or a back-button from counting the same booking twice. */
+function trackBookingCompleted() {
+  if (document.body.dataset.page !== "booked") return;
+
+  const booking = window.__booking || {};
+  const key = "booked:" + (booking.uid || "nouid");
+
+  try {
+    if (sessionStorage.getItem(key)) return;   /* already counted this one */
+    sessionStorage.setItem(key, "1");
+  } catch (e) {
+    /* Private mode: fire anyway. Better a possible duplicate than a lost
+       conversion, since this is the only booking signal we get. */
+  }
+
+  track("booking_completed", {
+    method: "cal.com",
+    event_type: booking.slug || "unknown"
+  });
+}
 
 /* Booking CTAs -------------------------------------------------------------- */
 function initBookingCtas() {

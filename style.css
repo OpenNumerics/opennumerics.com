@@ -708,6 +708,40 @@ strong { color: inherit; font-weight: 700; }
 }
 
 /* ---------------------------------------------------------------------------
+   Post-booking confirmation page
+--------------------------------------------------------------------------- */
+.booked { text-align: center; }
+.booked h1 { margin-bottom: 1rem; }
+
+.booked__lead {
+  font-size: 1.2rem;
+  color: var(--muted);
+  max-width: 560px;
+  margin: 0 auto 3rem;
+}
+
+.booked__prep {
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+  padding: 2rem 2.25rem;
+  text-align: left;
+  background: var(--gold-tint);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius);
+}
+.booked__prep h2 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; }
+.booked__prep p { color: var(--muted); font-size: 1rem; }
+.booked__prep p:last-child { margin-bottom: 0; }
+
+.booked__actions {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------------------------
    Consent banner
 
    A bottom bar, not a blocking modal — every visit to this site is supposed to

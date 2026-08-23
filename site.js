@@ -14,9 +14,6 @@
    home / case_study / about / privacy:
 
      book_click        a booking CTA was pressed        (location)
-     booking_started   the Cal calendar rendered        (method)
-     booking_completed A SLOT WAS ACTUALLY BOOKED       (method)
-     booking_error     the Cal embed failed to load     (method)
      email_click       a mailto: link                   (address)
      case_study_click  a results tile or project card   (link, source)
      nav_click         a navbar link                    (label)
@@ -26,12 +23,16 @@
      scroll_depth      25 / 50 / 75 / 100%              (percent)
      engaged_time      15/30/60/120/300s, tab-aware     (seconds)
 
-   `booking_completed` is the only one that means a booked call, so mark it as
-   a key event: GA4 -> Admin -> Data display -> Events -> find it -> "Mark as
-   key event". It only shows up there after firing once, so make a test booking
-   first (then cancel it) — or register the name up front under Admin -> Key
-   events -> New key event. Do NOT also mark book_click, or you will count two
-   conversions per booking.
+   IMPORTANT, on measuring bookings. The CTAs open cal.com in a new tab rather
+   than in an on-page popup, which is a deliberate choice, but it means we can no
+   longer see whether a booking completed: the confirmation happens on cal.com's
+   own origin, and a cross-origin tab cannot report back. So `book_click` is the
+   furthest down the funnel this file can measure. It counts intent, not calls.
+
+   To recover the real conversion, set a "Redirect on booking" URL on the Cal.com
+   event type, pointing at a thank-you page on this domain, and fire the event
+   from that page. Until then, do not mark anything here as a GA4 key event and
+   expect it to mean a booked call.
 
    Note: analytics only runs after a visitor accepts the consent banner (see
    consent.js), so these numbers undercount real traffic. Fine for comparing
@@ -51,68 +52,6 @@ function track(name, params) {
 }
 
 /* ---------------------------------------------------------------------------
-   Cal.com embed loader (official snippet, unmodified)
---------------------------------------------------------------------------- */
-(function (C, A, L) {
-  let p = function (a, ar) { a.q.push(ar); };
-  let d = C.document;
-  C.Cal = C.Cal || function () {
-    let cal = C.Cal;
-    let ar = arguments;
-    if (!cal.loaded) {
-      cal.ns = {};
-      cal.q = cal.q || [];
-      d.head.appendChild(d.createElement("script")).src = A;
-      cal.loaded = true;
-    }
-    if (ar[0] === L) {
-      const api = function () { p(api, arguments); };
-      const namespace = ar[1];
-      api.q = api.q || [];
-      if (typeof namespace === "string") {
-        cal.ns[namespace] = cal.ns[namespace] || api;
-        p(cal.ns[namespace], ar);
-        p(cal, ["initNamespace", namespace]);
-      } else {
-        p(cal, ar);
-      }
-      return;
-    }
-    p(cal, ar);
-  };
-})(window, "https://app.cal.com/embed/embed.js", "init");
-
-Cal("init", { origin: "https://cal.com" });
-
-Cal("ui", {
-  hideEventTypeDetails: false,
-  layout: "month_view",
-  cssVarsPerTheme: { light: { "cal-brand": "#3f928a" } }
-});
-
-/* The booking funnel, in three steps:
-     book_click        someone pressed a CTA
-     booking_started   the calendar actually rendered
-     booking_completed a slot was taken            <- the real conversion
-
-   Tracking only the click would tell you how persuasive the button is, not how
-   many calls you got. The gap between the three is where you debug. */
-Cal("on", {
-  action: "linkReady",
-  callback: function () { track("booking_started", { method: "cal.com" }); }
-});
-
-Cal("on", {
-  action: "linkFailed",
-  callback: function () { track("booking_error", { method: "cal.com" }); }
-});
-
-Cal("on", {
-  action: "bookingSuccessful",
-  callback: function () { track("booking_completed", { method: "cal.com" }); }
-});
-
-/* ---------------------------------------------------------------------------
    Engagement wiring
 --------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
@@ -126,11 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
 /* Booking CTAs -------------------------------------------------------------- */
 function initBookingCtas() {
   document.querySelectorAll("[data-book]").forEach((el) => {
-    /* A real href so the CTA still works if the embed script is blocked, and
-       so the link stays crawlable and right-clickable. */
+    /* New tab, so the visitor keeps this page open behind the booking flow.
+       rel="noopener" stops the opened tab from touching window.opener. */
     el.setAttribute("href", `https://cal.com/${CAL_LINK}`);
-    el.setAttribute("data-cal-link", CAL_LINK);
-    el.setAttribute("data-cal-config", '{"layout":"month_view"}');
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener");
 
     el.addEventListener("click", () => {
       track("book_click", { location: el.dataset.cta || "unknown" });

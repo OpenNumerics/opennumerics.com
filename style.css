@@ -677,24 +677,13 @@ strong { color: inherit; font-weight: 700; }
 /* ---------------------------------------------------------------------------
    Bio
 --------------------------------------------------------------------------- */
+/* No photo by choice, so this is a plain prose block. max-width matches
+   .about-intro so the left edges line up down the page. */
 .bio {
-  display: flex;
-  align-items: flex-start;
-  gap: 2.5rem;
-  max-width: 760px;   /* matches .about-intro so the left edges line up */
+  max-width: 760px;
   margin: 0 auto;
 }
 
-.bio__photo {
-  width: 180px;
-  height: 180px;
-  flex-shrink: 0;
-  border-radius: var(--radius);
-  object-fit: cover;
-  box-shadow: var(--shadow-sm);
-}
-
-.bio__body { flex: 1; }
 .bio__body h3 { font-size: 1.4rem; margin-bottom: 0.2rem; }
 
 .bio__role {
@@ -909,8 +898,6 @@ mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
   .outcomes li + li::before { display: none; }
   .figure--medium img, .figure--narrow img { max-width: 100%; }
 
-  .bio { flex-direction: column; align-items: center; text-align: center; gap: 1.5rem; }
-  .bio__links { justify-content: center; }
 
   .consent { flex-direction: column; align-items: stretch; gap: 1rem; }
   .consent__actions .btn { flex: 1; text-align: center; }

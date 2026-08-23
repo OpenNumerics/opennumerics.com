@@ -14,11 +14,13 @@ Plain HTML + CSS + a little vanilla JS. No build step, no framework.
   these is a conversion decision, not a layout one.
 - `style.css` — the whole design system. Tokens live in `:root` at the top; edit
   those (colors, radius, spacing) before touching individual rules.
-- `about.html` — founder bio. The homepage carries a short version in `#about`;
-  this is the long one. Both still contain `[bracketed placeholders]`.
+- `about.html` — founder bio. Still contains `[bracketed placeholders]` and wants
+  a photo at `/images/hannes.jpg` (the `<img>` hides itself until that exists).
 - `privacy.html` — what the site does with data. Linked from the consent banner.
 - `experience.js` — renders the *Projects & insights* cards from a `projects`
   array. **Add a new case study by adding an entry here** + a page in `solutions/`.
+- `services.js` — expand/collapse behavior for the *Technical expertise*
+  accordion. Homepage only.
 - `consent.js` — cookie consent + the GA4 bootstrap. Loaded synchronously in
   `<head>` on every page, before anything measures anything.
 - `site.js` — booking CTAs and event tracking. Loaded at the end of every page.

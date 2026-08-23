@@ -18,8 +18,6 @@
       <a class="nav__brand" href="/">Open Numerics</a>
       <nav class="nav__links">
         <a href="#services">How we help</a>
-        <a href="#results">Results</a>
-        <a href="#expertise">Expertise</a>
         <a href="#experience">Our work</a>
         <a href="/about.html">About</a>
       </nav>
@@ -27,22 +25,19 @@
     </div>
   </header>
 
-  <!-- 1. Hero — the customer's problem, not our capabilities -->
+  <!-- 1. Hero — one headline, one sentence, one action. The old version stacked
+       five text blocks above the fold; nobody read past the second. -->
   <section id="home" class="hero">
     <div class="container">
-      <span class="eyebrow">Computational science &amp; engineering</span>
-      <h1>Accelerating Computational Discovery</h1>
-      <p class="hero__tagline">
-        When simulations take <span class="accent">weeks</span>, compute bills grow faster than
-        the team, or research code can't make it into production — that's the work we do.
-      </p>
+      <h1><span class="accent-gold">Accelerating</span> Computational Discovery</h1>
+      <p class="hero__lead">When compute becomes the bottleneck, innovation slows.</p>
       <p class="hero__sub">
-        We help scientific and engineering teams remove computational bottlenecks using numerical
-        methods, machine learning, high-performance computing and modern software engineering.
+        We help scientific and engineering teams build faster computational workflows —
+        so they can spend less time waiting and more time discovering.
       </p>
       <div class="hero__actions">
         <a class="btn btn--primary btn--lg" data-book data-cta="hero">Book a 30-minute consultation</a>
-        <a href="#experience" class="btn btn--ghost btn--lg" data-cta="hero-secondary">Explore our work</a>
+        <a href="#experience" class="link-arrow" data-cta="hero-secondary">Explore our work</a>
       </div>
       <ul class="outcomes">
         <li>Faster simulations</li>
@@ -194,56 +189,136 @@
         </p>
       </div>
 
-      <div class="skills">
-        <article class="skill">
-          <img src="/icons/modelling_40x40.svg" alt="" width="46" height="46" loading="lazy">
-          <h3>Modeling &amp; Simulation</h3>
-          <p>PDE-based models and solvers at production scale — FEniCS, OpenFOAM and custom
-             discretizations across deterministic, stochastic and multiscale systems.</p>
-        </article>
+      <ul class="services-list">
+        <li class="expandable-item" role="button" aria-expanded="false">
+          <div class="item-header">
+            <img class="service-icon small" src="icons/modelling_40x40.svg" alt="">
+            <span>Scalable Quantitative Modeling &amp; Simulations</span>
+            <span class="plus-sign">+</span>
+          </div>
+          <div class="item-content">
+            <div class="item-detail">
+              <img class="service-image large" src="icons/modelling_240x160.svg" alt="Quantitative modeling illustration">
+              <div class="text-block">
+                <p><strong>Modeling the real world: reliably and at scale.</strong></p>
+                <p>We design and implement quantitative models and software to simulate complex systems — physical processes, engineered systems, or data-driven phenomena — grounded in first principles and enhanced by data.</p>
+                <p>We specialize in PDE-based modeling and simulation, with scalable implementations using tools like FEniCS (finite elements), OpenFOAM (finite volumes), and custom solvers, spanning deterministic and stochastic systems, hybrid physics-ML architectures, and multiscale formulations.</p>
+                <p>From early prototyping to production-scale simulation, we support the full modeling lifecycle across domains and deployment environments.</p>
+              </div>
+            </div>
+          </div>
+        </li>
 
-        <article class="skill">
-          <img src="/icons/sciml_40x40.svg" alt="" width="46" height="46" loading="lazy">
-          <h3>Scientific Machine Learning</h3>
-          <p>Surrogates, neural operators and hybrid physics-ML models that cut time-to-solution
-             without giving up physical fidelity.</p>
-        </article>
+        <li class="expandable-item" role="button" aria-expanded="false">
+          <div class="item-header">
+            <img class="service-icon small" src="icons/sciml_40x40.svg" alt="">
+            <span>Machine Learning &amp; AI for Scientific Data</span>
+            <span class="plus-sign">+</span>
+          </div>
+          <div class="item-content">
+            <div class="item-detail">
+              <img class="service-image large" src="icons/sciml_240x160.svg" alt="Scientific machine learning illustration">
+              <div class="text-block">
+                <p><strong>Turning scientific data into predictive power.</strong></p>
+                <p>From physical measurements to simulation outputs, scientific data is everywhere — but traditional models often oversimplify complex dynamics or demand excessive compute. We build custom machine learning tools tailored to your scientific workflows.</p>
+                <p>Our approach draws on scientific machine learning (SciML), where first-principles physics meets data-driven modeling. Whether you're accelerating a numerical solver, building a digital twin, or learning unknown dynamics from experiments, we develop models that are accurate, efficient, and physically grounded.</p>
+                <p>Use cases include foundation models, design optimization, and uncertainty quantification — all powered by modern ML for science.</p>
+              </div>
+            </div>
+          </div>
+        </li>
 
-        <article class="skill">
-          <img src="/icons/agentic.svg" alt="" width="46" height="46" loading="lazy">
-          <h3>Automated Workflows</h3>
-          <p>Systems that plan and run numerical work end to end — calling solvers, HPC jobs and
-             data pipelines, with a human in the loop where it matters.</p>
-        </article>
+        <li class="expandable-item" role="button" aria-expanded="false">
+          <div class="item-header">
+            <img class="service-icon small" src="icons/agentic.svg" alt="">
+            <span>Agentic AI for Computational Workflows</span>
+            <span class="plus-sign">+</span>
+          </div>
+          <div class="item-content">
+            <div class="item-detail">
+              <img class="service-image large" src="icons/agentic.svg" alt="Agentic AI illustration">
+              <div class="text-block">
+                <p><strong>Autonomous agents that run your computational workflows.</strong></p>
+                <p>We build AI agents that turn a plain-language goal into executed numerical work — planning the steps, calling the right tools (solvers, HPC jobs, ML models, data pipelines), interpreting the results, and iterating until the objective is met.</p>
+                <p>Our agents are grounded in scientific rigor and your domain constraints: they reason over real physics and data, keep a human in the loop where it matters, and produce results you can trace and trust. The outcome is faster exploration, less manual orchestration, and expert workflows your whole team can run.</p>
+              </div>
+            </div>
+          </div>
+        </li>
 
-        <article class="skill">
-          <img class="custom" src="/icons/custom_40x40.svg" alt="" width="46" height="46" loading="lazy">
-          <h3>Custom Algorithms &amp; Solvers</h3>
-          <p>Fast linear and nonlinear solvers, adaptive time-stepping, particle methods and
-             PDE-constrained optimization, built around the structure of your problem.</p>
-        </article>
+        <li class="expandable-item" role="button" aria-expanded="false">
+          <div class="item-header">
+            <img class="service-icon custom small" src="icons/custom_40x40.svg" alt="">
+            <span>Custom Algorithms &amp; Numerical Solvers</span>
+            <span class="plus-sign">+</span>
+          </div>
+          <div class="item-content">
+            <div class="item-detail">
+              <img class="service-image custom large" src="icons/custom_240x160.svg" alt="Custom algorithms illustration">
+              <div class="text-block">
+                <p><strong>Solvers that fit your problem, not the other way around.</strong></p>
+                <p>We have decades of experience designing state-of-the-art numerical and machine learning algorithms for scientific and engineering applications — methods aligned with the structure and demands of your problem, not generic off-the-shelf tools.</p>
+                <p>Our expertise spans fast linear and nonlinear solvers, domain-specific PDE discretizations, adaptive time-stepping, and particle-based simulation. We also build scalable surrogate models, customized ML optimizers, advanced sampling techniques, and uncertainty quantification workflows for deterministic and stochastic systems.</p>
+                <p>From multiscale dynamics to PDE-constrained optimization, we develop robust computational tools grounded in scientific rigor and algorithmic innovation.</p>
+              </div>
+            </div>
+          </div>
+        </li>
 
-        <article class="skill">
-          <img src="/icons/gaussian_40x40.svg" alt="" width="46" height="46" loading="lazy">
-          <h3>Uncertainty Quantification</h3>
-          <p>Bayesian inference, stochastic sampling and rare-event analysis — predictions that
-             arrive with calibrated confidence, not just point estimates.</p>
-        </article>
+        <li class="expandable-item" role="button" aria-expanded="false">
+          <div class="item-header">
+            <img class="service-icon small" src="icons/gaussian_40x40.svg" alt="">
+            <span>Uncertainty Quantification &amp; Probabilistic Inference</span>
+            <span class="plus-sign">+</span>
+          </div>
+          <div class="item-content">
+            <div class="item-detail">
+              <img class="service-image large" src="icons/gaussian_240x160.svg" alt="Uncertainty quantification illustration">
+              <div class="text-block">
+                <p><strong>Predictions without uncertainty are incomplete.</strong></p>
+                <p>We go beyond point estimates to deliver confidence — quantifying how much trust you can place in your numerical models and ML predictions. Using Bayesian inference, stochastic sampling, and uncertainty quantification, we capture uncertainty from parameter calibration to predictive distributions.</p>
+                <p>Our methods address out-of-sample generalization and rare-event analysis. Whether you're solving PDEs with uncertain inputs or deploying ML in high-risk settings, our probabilistic approach delivers predictions that are robust, transparent, and decision-ready.</p>
+              </div>
+            </div>
+          </div>
+        </li>
 
-        <article class="skill">
-          <img src="/icons/GPU_40x40.svg" alt="" width="46" height="46" loading="lazy">
-          <h3>GPU &amp; HPC Acceleration</h3>
-          <p>CUDA kernels, parallel solvers and Slurm-scale pipelines that move workloads from
-             weeks to hours on hardware you already own.</p>
-        </article>
+        <li class="expandable-item" role="button" aria-expanded="false">
+          <div class="item-header">
+            <img class="service-icon small" src="icons/GPU_40x40.svg" alt="">
+            <span>GPU (CUDA) &amp; HPC Integration</span>
+            <span class="plus-sign">+</span>
+          </div>
+          <div class="item-content">
+            <div class="item-detail">
+              <img class="service-image large" src="icons/GPU_240x160.svg" alt="GPU and HPC illustration">
+              <div class="text-block">
+                <p><strong>Speed is strategy.</strong></p>
+                <p>In modern computational science and machine learning, performance is foundational. We help you unlock the full power of your hardware by accelerating models and simulations with GPU computing, CUDA programming, and high-performance computing.</p>
+                <p>From custom CUDA kernels and GPU-enabled ML to parallel solvers and large-scale pipelines, we optimize your code for modern architectures. Whether you're handling terabytes of data, simulating PDEs at scale, or running ML workflows on Slurm, we build for performance, efficiency, and scalability.</p>
+              </div>
+            </div>
+          </div>
+        </li>
 
-        <article class="skill">
-          <img src="/icons/cloud_40x40.svg" alt="" width="46" height="46" loading="lazy">
-          <h3>Deployment &amp; Integration</h3>
-          <p>Onsite, private-cloud or containerized delivery, integrated with your existing
-             systems and maintained after handover.</p>
-        </article>
-      </div>
+        <li class="expandable-item" role="button" aria-expanded="false">
+          <div class="item-header">
+            <img class="service-icon small" src="icons/cloud_40x40.svg" alt="">
+            <span>Onsite or Hosted Deployments</span>
+            <span class="plus-sign">+</span>
+          </div>
+          <div class="item-content">
+            <div class="item-detail">
+              <img class="service-image large" src="icons/cloud_240x160.svg" alt="Deployment illustration">
+              <div class="text-block">
+                <p><strong>Seamless deployment, your way.</strong></p>
+                <p>We don't just build models — we help you integrate them into your workflow. Whether you need an onsite installation, a private cloud setup, or a lightweight containerized service, we deliver where and how you need it.</p>
+                <p>Our deployment support spans local execution to scalable hosted platforms. We work closely with your team for smooth integration with existing systems — running simulations, launching ML services, or automating pipelines — so our tools deliver value from day one.</p>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -298,41 +373,7 @@
     </div>
   </section>
 
-  <!-- 9. Who you'd be working with — the last objection before the CTA is
-       "who am I actually going to be on this call with?" -->
-  <section id="about" class="section section--alt">
-    <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Who you'd be working with</span>
-        <h2 class="section-title">A small practice, not a staffing agency</h2>
-      </div>
-
-      <!-- TODO: add /images/hannes.jpg (square, ~600×600). The tag hides itself
-           until the file exists, so this is safe to deploy as-is. -->
-      <div class="bio bio--compact">
-        <img class="bio__photo" src="/images/hannes.jpg" alt="Hannes Vandecasteele"
-             onerror="this.style.display='none'" />
-
-        <div class="bio__body">
-          <h3>Hannes Vandecasteele</h3>
-          <p class="bio__role">Founder — Open Numerics, LLC</p>
-
-          <!-- TODO: replace with two or three sentences of your own. The full
-               version lives on /about.html — keep this one short. -->
-          <p>
-            [Two or three sentences: your background, the problems you've spent
-            your career on, and what a client gets from working with you directly.
-            The person who answers your booking request is the person who does the
-            work — say so here.]
-          </p>
-
-          <a href="/about.html" class="bio__more" data-cta="about-link">More about Hannes →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10. Contact -->
+  <!-- 9. Contact -->
   <section id="contact" class="section section--tint cta-band">
     <div class="container">
       <span class="eyebrow">Get started</span>
@@ -360,6 +401,7 @@
   </footer>
 
   <script src="/experience.js"></script>
+  <script src="/services.js"></script>
   <script src="/site.js"></script>
 </body>
 </html>

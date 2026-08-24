@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     {
+      title: "A Typical Consultation",
+      link: "/solutions/consultation.html",
+      description: "Improving the Performance of a Critical Piece of Code",
+      image: "images/consultation.png"
+    },
+    {
       title: "Optimal Control of Chemical Reactors",
       link: "/solutions/chemical.html",
       description: "PDE Constrained Optimization for Optimal Control of a Gas Reactor",

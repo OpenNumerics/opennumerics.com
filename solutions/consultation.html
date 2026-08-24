@@ -48,8 +48,8 @@
     <h3> Our Contribution</h3>
     <p class="intro-text">We completed a performance analysis of the code, including profiling CPU and memory requirements, and identified the main bottleneck: a numerical kernel consisting of three nested loops. After an initial study, we were able to vectorize calculations and reduce to just one loop. Futher performance gains were possible by moving the numerical code to GPU for acceleration.  </p>
 
-    <!-- <img src="/images/agentic_loop.png"
-         alt="The autoresearch agentic loop" />  -->
+    <img src="/images/consultation_vectorized.png"
+         alt="From inefficient nested loops to high-performant vectorization. " />
 
     <h3> The Result for our Client </h3>
     <p class="intro-text">By surgically rewriting the old nested loops by a fully vectorized function, interpolations reduced from over eight hours to just two minutes in runtime. This removed the critical bottleneck for our client, enabling them to run up to 1,200x more interpolations and designs per day. Total project duration: 7 days.</p>

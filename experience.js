@@ -37,12 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       image: "images/elasticity.png"
     },
     {
-      title: "Enhanced Sampling for Molecular Dynamics",
-      link: "/solutions/sampling.html",
-      description: "New multifidelity sampling algorithm for improved molecular structure predition",
-      image: "images/alanine_dipeptide.png"
-    },
-    {
       title: "Agentic AI for Automated Research",
       link: "/solutions/agent.html",
       description: "An agent that determines the optimal model parameters by reasoning",

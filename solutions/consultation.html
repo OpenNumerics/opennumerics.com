@@ -42,22 +42,19 @@
     <h2>Improving the Performance of a Critical Piece of Code</h2>
     <p class="intro-text">s</p>
 
-    <p class="intro-text">Our client is a research firm specializing in building machine-learning models for healthcare applications. Their new line of models is based on the transformer architecture (the technology behind LLMs) for time-series prediction of disease progression. </p>
+    <p class="intro-text">A client in engineering design and advanced manufacturing relies on a critical piece of computational code running many high-accuracy interpolations. This code took nearly eight hours to complete, posing a debilitating bottleneck on our client's design workflow. </p>
     
-    <p class="intro-text">However, their architecture contains many hyperparameters, and their precise values have a big impact on the eventual accuracy of the model. These hyperparamters include regularization, internal state-space dimension, learning-rate schedules, number of layers, and some extra parameters in the loss function. In total there were 9 hyperparameters, too many to run a systematic grid search.</p>
     
     <h3> Our Contribution</h3>
-    <p class="intro-text">We built an *autoresearch agent* that automatically traverses the hyperparameter search space to find the model with the lowest possible validation loss. The agent knows the neural (transformer) architecture, and what the model is trying to achieve, medically speaking. The agent first proposes a set of initial hyperparameter values and trains the model. Based on the loss progression, the training-validation gap and other training artifacts, it reasons through the effects of its choice and proposes a second set of values. The agent iterations until the validation loss is minimized. </p>
+    <p class="intro-text">We completed a performance analysis of the code, including profiling CPU and memory requirements, and identified the main bottleneck: a numerical kernel consisting of three nested loops. After an initial study, we were able to vectorize calculations and reduce to just one loop. Futher performance gains were possible by moving the numerical code to GPU for acceleration.  </p>
 
-    <img src="/images/agentic_loop.png"
-         alt="The autoresearch agentic loop" />
+    <!-- <img src="/images/agentic_loop.png"
+         alt="The autoresearch agentic loop" />  -->
 
     <h3> The Result for our Client </h3>
-    <p class="intro-text">The autoresearch agent can traverse the search space much faster than a traditional hyperparameter sweep. It found good values for all parameters in just 10 iterations. For reference, a systematic grid search in 9-dimensional spaces easily takes months, our agent did it in eight days. </p>
+    <p class="intro-text">By surgically rewriting the old nested loops by a fully vectorized function, interpolations reduced from over eight hours to just two minutes in runtime. This removed the critical bottleneck for our client, enabling them to run up to 1,200x more interpolations and designs per day. Total project duration: 7 days.</p>
 
-    <h3> Impact </h3>
-    <p class="intro-text"> The client was able to release their new disease-progression predictor much faster due to the autoresearch agent. A clear value addition of agentic AI.</p>
-
+    
     
   <section id="case-cta" class="case-cta">
     <h2>Facing a similar bottleneck?</h2>

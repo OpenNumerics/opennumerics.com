@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <title>Open Numerics - Chemical Diffusion</title>
+  <link rel="stylesheet" href="/style.css" />
+
+  <script src="/consent.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script id="MathJax-script"
+          async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+      <nav class="nav__links">
+        <a href="/#services">How we help</a>
+        <a href="/#experience">Our work</a>
+        <a href="/about.html">About</a>
+      </nav>
+      <a class="btn btn--primary btn--sm" data-book data-cta="nav">Book a call</a>
+    </div>
+  </header>
+
+<main class="article">
+  <div class="prose">
+    <h2>Diffusion for Chemical Conformer Generation</h2>
+    <p class="intro-text">A client in the pharmaceutical industry wanted to improve their small-molecule workflow. Small molecules are important in the drug-design process. They bind to proteins in molecular cavities, potentially inducing conformation changes in the protein. This, in turn, causes activations or inhibitions in the cell, leading to downstream medical effects.  </p>
+
+    <p class="intro-text">Understanding the possible 3D structurs a small molecule can assume is therefore of paramount importance in drug discovery. In our client's models, one molecule mapped to only one 3D structure. This is not only chemically incorrect, but also ignores a large part of the chemical search space. </p>
+    
+    <p class="intro-text">We at Open Numerics took on the research project of building a model that can quickly find <strong>all</strong> 3D conformations, just from a chemical formula.</p>
+    
+    <h3> Our Contribution</h3>
+    <p class="intro-text">We trained a custom Diffusion Model for sampling the full conformation space of a molecule. The diffusion model is conditioned on the SMILES string representation of the molecule. Diffusion Models are an efficient way of sampling from a highly complex distribution, naturallly representing multiple 3D structures of the same molecule.</p>
+
+    <p class="intro-text">We confirmed the diffusion model's correctness on previously known conformations exactly.
+    </p>
+
+    <img src="/images/chemdm_wide.png"
+         alt="The autoresearch agentic loop" />
+
+    <h3> Impact </h3>
+    <p class="intro-text"> The diffusion model has been integrated into our client's pipeline, and we also increased its performance through vectorization and GPU parallelization at the same time. After running for two weeks, the chemical search space essentially increased by a factor 2.7 because it now contains multiple structures per molecule. The protein-binding simulation results they obtain are not only faster, they are more accurate. Clear gains.</p>
+
+    
+  <section id="case-cta" class="case-cta">
+    <h2>Facing a similar bottleneck?</h2>
+    <p>
+      Book a free 30-minute consultation. Bring your slowest workflow and we'll tell you
+      what we'd do about it.
+    </p>
+    <a class="btn btn--primary btn--lg" data-book data-cta="case-study">Book a 30-minute consultation</a>
+  </section>
+
+  <div class="back-button-wrapper">
+    <a href="/#experience" class="button-link">← Back to our Solutions</a>
+  </div>
+  </main>
+
+
+
+
+  <footer class="footer">
+    <nav class="footer__links">
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="mailto:info@opennumerics.com">info@opennumerics.com</a>
+    </nav>
+    <p>© <script>document.write(new Date().getFullYear())</script> Open Numerics, LLC</p>
+  </footer>
+  <script src="/site.js"></script>
+</body>
+
+</html>

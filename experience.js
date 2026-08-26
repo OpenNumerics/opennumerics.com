@@ -42,6 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "An agent that determines the optimal model parameters by reasoning",
       image: "images/agentic_loop.png"
     },
+    {
+      title: "Accelerating Conformer Generation in Drug Discovery",
+      link: "/solutions/chemdm.html",
+      description: "Training a custom diffusion model for representing 3D molecular structures",
+      image: "images/chemdm_square.png"
+    },
   ];
 
   const gridContainer = document.getElementById("projects-grid");

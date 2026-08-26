@@ -646,7 +646,7 @@ strong { color: inherit; font-weight: 700; }
 }
 
 .grid-item img {
-  width: 100%;
+  width: 90%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: var(--radius-sm);

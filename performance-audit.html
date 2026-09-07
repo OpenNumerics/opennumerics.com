@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Computational Performance Audit | Open Numerics</title>
+
+  <meta
+    name="description"
+    content="Find out why your scientific software is slow. Open Numerics profiles computational workflows, identifies the real bottlenecks, and delivers a written technical report with prioritized recommendations for faster simulations, lower compute costs, and shorter research cycles."
+  />
+
+  <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+
+  <script src="/consent.js"></script>
+</head>
+
+<body>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="/">Open Numerics</a>
+
+      <nav class="nav__links">
+        <a href="/#services">How we help</a>
+        <a href="/#experience">Our work</a>
+        <a href="/about.html">About</a>
+      </nav>
+
+      <a
+        class="btn btn--primary btn--sm"
+        data-book
+        data-cta="audit-nav"
+      >
+        Discuss your workload
+      </a>
+    </div>
+  </header>
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+
+      <span class="eyebrow">Computational Performance Audit</span>
+
+      <h1>
+        Find out why your
+        <span class="accent-gold">scientific code is slow.</span>
+      </h1>
+
+      <p class="hero__lead">
+        More compute is not always the answer.
+      </p>
+
+      <p class="hero__sub">
+        We benchmark and profile one computational workload, identify the
+        dominant bottlenecks, and deliver a written technical report with
+        concrete recommendations for making it faster.
+      </p>
+
+      <div class="hero__actions">
+        <a
+          class="btn btn--primary btn--lg"
+          data-book
+          data-cta="audit-hero"
+        >
+          Discuss your performance problem
+        </a>
+
+        <a
+          href="#report"
+          class="link-arrow"
+          data-cta="audit-hero-report"
+        >
+          See what the report includes
+        </a>
+      </div>
+
+      <ul class="outcomes">
+        <li>Measured bottlenecks</li>
+        <li>Prioritized recommendations</li>
+        <li>Clear implementation options</li>
+        <li>A report your team can keep</li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- Core value proposition -->
+  <section class="section section--alt">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">Performance starts with diagnosis</span>
+
+        <h2 class="section-title">
+          Don't optimize what isn't limiting you.
+        </h2>
+
+        <p class="section-sub">
+          Slow computational workflows can have very different causes.
+          The expensive part might be a Python loop, memory access, CPU-GPU
+          communication, an inefficient solver, excessive I/O, poor parallel
+          scaling, or an algorithm that simply performs more computation than
+          necessary.
+        </p>
+
+        <p class="section-sub">
+          The purpose of the Computational Performance Audit is to measure the
+          real bottleneck first, then determine what is actually worth changing.
+        </p>
+      </div>
+
+      <div class="offers">
+
+        <article class="offer">
+          <span class="offer__tag">Software</span>
+          <h3>Implementation bottlenecks</h3>
+          <p class="offer__promise">
+            The algorithm may be fine. The implementation may not be.
+          </p>
+          <ul class="offer__list">
+            <li>Python loops and interpreter overhead</li>
+            <li>Poor memory-access patterns</li>
+            <li>Unnecessary allocations and copies</li>
+            <li>Vectorization opportunities</li>
+          </ul>
+        </article>
+
+        <article class="offer">
+          <span class="offer__tag">Hardware</span>
+          <h3>Scaling bottlenecks</h3>
+          <p class="offer__promise">
+            More cores or GPUs only help if the workload can use them.
+          </p>
+          <ul class="offer__list">
+            <li>CPU and GPU utilization</li>
+            <li>Parallel scaling</li>
+            <li>Data-transfer overhead</li>
+            <li>Memory bandwidth</li>
+          </ul>
+        </article>
+
+        <article class="offer">
+          <span class="offer__tag">Numerics</span>
+          <h3>Algorithmic bottlenecks</h3>
+          <p class="offer__promise">
+            Sometimes the biggest speedup comes from changing the computation.
+          </p>
+          <ul class="offer__list">
+            <li>Solver choice and convergence</li>
+            <li>Numerical formulation</li>
+            <li>Reduced-order methods</li>
+            <li>Scientific ML surrogates</li>
+          </ul>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Report as primary deliverable -->
+  <section id="report" class="section">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">The main deliverable</span>
+
+        <h2 class="section-title">
+          You receive a written Computational Performance Report.
+        </h2>
+
+        <p class="section-sub">
+          The audit does not end with profiler output or a verbal recommendation.
+          We turn the analysis into a technical document your team can use to
+          decide what to fix, what to postpone, and what may justify a larger
+          engineering effort.
+        </p>
+      </div>
+
+      <div class="offers">
+
+        <article class="offer offer--primary">
+          <span class="offer__tag">01</span>
+
+          <h3>Executive Summary</h3>
+
+          <p class="offer__promise">
+            The most important findings in a form that can be shared with
+            technical leadership.
+          </p>
+
+          <ul class="offer__list">
+            <li>What is limiting performance</li>
+            <li>Why it matters</li>
+            <li>Highest-value opportunities</li>
+            <li>Recommended next steps</li>
+          </ul>
+        </article>
+
+        <article class="offer">
+          <span class="offer__tag">02</span>
+
+          <h3>Measured Baseline</h3>
+
+          <p class="offer__promise">
+            A reproducible view of how the workload performs today.
+          </p>
+
+          <ul class="offer__list">
+            <li>Runtime and workload definition</li>
+            <li>Hardware and execution environment</li>
+            <li>Profiler results</li>
+            <li>Memory and scaling behavior</li>
+          </ul>
+        </article>
+
+        <article class="offer">
+          <span class="offer__tag">03</span>
+
+          <h3>Bottleneck Analysis</h3>
+
+          <p class="offer__promise">
+            A technical explanation of where time and compute are being lost.
+          </p>
+
+          <ul class="offer__list">
+            <li>Dominant kernels and operations</li>
+            <li>Software and memory bottlenecks</li>
+            <li>CPU/GPU utilization issues</li>
+            <li>Numerical and algorithmic limitations</li>
+          </ul>
+        </article>
+
+        <article class="offer">
+          <span class="offer__tag">04</span>
+
+          <h3>Prioritized Recommendations</h3>
+
+          <p class="offer__promise">
+            Concrete improvements ranked by expected value and engineering effort.
+          </p>
+
+          <ul class="offer__list">
+            <li>Quick wins</li>
+            <li>Engineering improvements</li>
+            <li>Algorithmic opportunities</li>
+            <li>Expected impact and implementation effort</li>
+          </ul>
+        </article>
+
+        <article class="offer offer--accent">
+          <span class="offer__tag">05</span>
+
+          <h3>Implementation Options</h3>
+
+          <p class="offer__promise">
+            Specific opportunities your team or Open Numerics can build next.
+          </p>
+
+          <ul class="offer__list">
+            <li>Code-level optimization opportunities</li>
+            <li>Parallel or GPU acceleration</li>
+            <li>Solver and architecture improvements</li>
+            <li>Potential Scientific ML or surrogate approaches</li>
+          </ul>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Example recommendation format -->
+  <section class="section section--tint">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">Actionable recommendations</span>
+
+        <h2 class="section-title">
+          Every finding should lead to a decision.
+        </h2>
+
+        <p class="section-sub">
+          Recommendations are not generic optimization advice. Each one ties a
+          measured problem to a concrete intervention, expected impact, and
+          implementation path.
+        </p>
+      </div>
+
+      <div class="offers">
+
+        <article class="offer offer--primary">
+          <span class="offer__tag">Example finding</span>
+
+          <h3>Memory-bound numerical kernel</h3>
+
+          <ul class="offer__list">
+            <li><strong>Evidence:</strong> dominant runtime inside repeated array operations</li>
+            <li><strong>Impact:</strong> High</li>
+            <li><strong>Effort:</strong> Low to medium</li>
+            <li><strong>Recommendation:</strong> restructure memory access and vectorize the hot path</li>
+            <li><strong>Next step:</strong> implement and benchmark against the existing baseline</li>
+          </ul>
+        </article>
+
+        <article class="offer">
+          <span class="offer__tag">Example finding</span>
+
+          <h3>Underutilized parallel hardware</h3>
+
+          <ul class="offer__list">
+            <li><strong>Evidence:</strong> expensive operations remain effectively serial</li>
+            <li><strong>Impact:</strong> High</li>
+            <li><strong>Effort:</strong> Medium</li>
+            <li><strong>Recommendation:</strong> restructure computation for parallel or GPU execution</li>
+            <li><strong>Next step:</strong> prototype acceleration of the dominant kernels</li>
+          </ul>
+        </article>
+
+        <article class="offer offer--accent">
+          <span class="offer__tag">Example finding</span>
+
+          <h3>Repeated expensive numerical solve</h3>
+
+          <ul class="offer__list">
+            <li><strong>Evidence:</strong> repeated solver calls dominate end-to-end runtime</li>
+            <li><strong>Impact:</strong> Potentially very high</li>
+            <li><strong>Effort:</strong> High</li>
+            <li><strong>Recommendation:</strong> investigate reduced-order or learned surrogate approaches</li>
+            <li><strong>Next step:</strong> feasibility study and benchmark against the original solver</li>
+          </ul>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Audit workflow -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">How the audit works</span>
+
+        <h2 class="section-title">
+          From a slow workload to a clear technical roadmap.
+        </h2>
+      </div>
+
+      <ol class="process">
+
+        <li class="process__step">
+          <span class="process__num">1</span>
+
+          <h3>Define the workload</h3>
+
+          <p>
+            We agree on one representative computational workflow, its current
+            performance, and the conditions under which it should be evaluated.
+          </p>
+        </li>
+
+        <li class="process__step">
+          <span class="process__num">2</span>
+
+          <h3>Benchmark and profile</h3>
+
+          <p>
+            We reproduce the workload and measure where runtime, memory,
+            communication and compute are actually being spent.
+          </p>
+        </li>
+
+        <li class="process__step">
+          <span class="process__num">3</span>
+
+          <h3>Investigate the bottlenecks</h3>
+
+          <p>
+            We look beyond individual functions and consider software,
+            hardware, numerical methods and overall workflow architecture.
+          </p>
+        </li>
+
+        <li class="process__step">
+          <span class="process__num">4</span>
+
+          <h3>Deliver the report</h3>
+
+          <p>
+            You receive the written analysis, prioritized recommendations,
+            and implementation options, followed by a technical walkthrough
+            of the findings.
+          </p>
+        </li>
+
+      </ol>
+
+    </div>
+  </section>
+
+
+  <!-- Examples -->
+  <section id="examples" class="section section--alt">
+    <div class="container">
+
+      <div class="section-head">
+        <span class="eyebrow">Examples from our work</span>
+
+        <h2 class="section-title">
+          Performance problems exist at every scale.
+        </h2>
+
+        <p class="section-sub">
+          Sometimes the right intervention changes a few lines of code.
+          Sometimes it changes how the software uses hardware.
+          Sometimes it changes the computational method itself.
+        </p>
+      </div>
+
+
+      <article class="offer offer--primary">
+
+        <span class="offer__tag">Kernel level</span>
+
+        <h3>Removing a numerical kernel bottleneck</h3>
+
+        <p class="offer__promise">
+          A scientific workflow was spending most of its runtime inside nested
+          loops over large multidimensional arrays.
+        </p>
+
+        <p>
+          Instead of adding compute, we examined how the workload accessed
+          memory and how operations were organized across its feature,
+          spatial and temporal dimensions.
+        </p>
+
+        <p>
+          The analysis showed that much of the computation could be expressed
+          as vectorized array operations. The kernel was restructured around
+          contiguous operations while retaining only the necessary outer loop.
+        </p>
+
+        <ul class="offer__list">
+          <li><strong>Bottleneck:</strong> loop and memory-access overhead</li>
+          <li><strong>Intervention:</strong> vectorization and restructuring</li>
+          <li><strong>Scope:</strong> individual computational kernel</li>
+        </ul>
+
+      </article>
+
+
+      <article class="offer">
+
+        <span class="offer__tag">System level</span>
+
+        <h3>Scaling a computational research pipeline</h3>
+
+        <p class="offer__promise">
+          A computational modeling pipeline had become expensive enough that
+          runtime was limiting the speed of research and iteration.
+        </p>
+
+        <p>
+          We analyzed how computation moved through the full workflow rather
+          than optimizing individual functions in isolation. Profiling exposed
+          opportunities for vectorization, parallel execution and hardware
+          acceleration.
+        </p>
+
+        <p>
+          The resulting acceleration work combined software restructuring
+          with parallel and GPU execution, targeting the expensive operations
+          that could actually benefit from modern hardware.
+        </p>
+
+        <ul class="offer__list">
+          <li><strong>Bottleneck:</strong> inefficient execution of compute-intensive workloads</li>
+          <li><strong>Intervention:</strong> vectorization, parallelization and GPU acceleration</li>
+          <li><strong>Scope:</strong> full computational workflow</li>
+        </ul>
+
+      </article>
+
+
+      <article class="offer offer--accent">
+
+        <span class="offer__tag">Algorithm level</span>
+
+        <h3>Replacing repeated numerical work with learned surrogates</h3>
+
+        <p class="offer__promise">
+          Sometimes optimizing the implementation is not enough. The expensive
+          operation itself has to change.
+        </p>
+
+        <p>
+          In scientific machine learning research, we worked on computational
+          workflows where expensive numerical operations were repeatedly
+          evaluated inside a larger simulation or solution process.
+        </p>
+
+        <p>
+          Rather than only making those operations execute faster, we
+          investigated learned surrogate models that approximate the expensive
+          computation while preserving the numerical behavior required by the
+          surrounding workflow.
+        </p>
+
+        <ul class="offer__list">
+          <li><strong>Bottleneck:</strong> fundamentally expensive repeated computation</li>
+          <li><strong>Intervention:</strong> scientific ML and surrogate modeling</li>
+          <li><strong>Scope:</strong> computational method itself</li>
+        </ul>
+
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- Audit independence -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head">
+
+        <span class="eyebrow">Useful even if we do nothing else</span>
+
+        <h2 class="section-title">
+          The report belongs to you.
+        </h2>
+
+        <p class="section-sub">
+          The Computational Performance Audit is a standalone engagement.
+          Your team can use the recommendations internally, hand them to
+          another engineering team, or ask Open Numerics to implement the
+          highest-value improvements.
+        </p>
+
+        <p class="section-sub">
+          The goal is to leave you with a clearer understanding of the
+          performance problem and a practical roadmap for solving it.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Audit vs implementation -->
+  <section class="section section--alt">
+    <div class="container">
+
+      <div class="section-head">
+
+        <span class="eyebrow">Audit first. Build second.</span>
+
+        <h2 class="section-title">
+          Diagnosis before implementation.
+        </h2>
+
+      </div>
+
+      <div class="offers">
+
+        <article class="offer offer--primary">
+
+          <span class="offer__tag">Step 1</span>
+
+          <h3>Computational Performance Audit</h3>
+
+          <p class="offer__promise">
+            Measure the problem and identify what is worth changing.
+          </p>
+
+          <ul class="offer__list">
+            <li>Benchmark the current workflow</li>
+            <li>Profile the dominant bottlenecks</li>
+            <li>Deliver a written technical report</li>
+            <li>Prioritize recommendations by impact and effort</li>
+          </ul>
+
+        </article>
+
+
+        <article class="offer offer--accent">
+
+          <span class="offer__tag">Optional Step 2</span>
+
+          <h3>Acceleration Sprint</h3>
+
+          <p class="offer__promise">
+            Turn the highest-value recommendations into working software.
+          </p>
+
+          <ul class="offer__list">
+            <li>Implement targeted optimizations</li>
+            <li>Accelerate CPU/GPU workloads</li>
+            <li>Improve algorithms and solvers</li>
+            <li>Benchmark against the original baseline</li>
+          </ul>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Who it is for -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head">
+
+        <span class="eyebrow">When an audit makes sense</span>
+
+        <h2 class="section-title">
+          You already know the computation matters.
+          You just need it to run faster.
+        </h2>
+
+      </div>
+
+      <ul class="services-list">
+
+        <li class="expandable-item" aria-expanded="true">
+          <div class="item-header">
+            <span>
+              A simulation takes hours or days and limits how many experiments you can run.
+            </span>
+          </div>
+        </li>
+
+        <li class="expandable-item" aria-expanded="true">
+          <div class="item-header">
+            <span>
+              Cloud or HPC costs are increasing faster than the value of additional compute.
+            </span>
+          </div>
+        </li>
+
+        <li class="expandable-item" aria-expanded="true">
+          <div class="item-header">
+            <span>
+              Your team is considering GPUs or additional hardware but does not know what speedup to expect.
+            </span>
+          </div>
+        </li>
+
+        <li class="expandable-item" aria-expanded="true">
+          <div class="item-header">
+            <span>
+              Research code works correctly but has become too slow or complex for production use.
+            </span>
+          </div>
+        </li>
+
+        <li class="expandable-item" aria-expanded="true">
+          <div class="item-header">
+            <span>
+              Profiling reveals expensive kernels, but the right optimization strategy is unclear.
+            </span>
+          </div>
+        </li>
+
+        <li class="expandable-item" aria-expanded="true">
+          <div class="item-header">
+            <span>
+              You suspect the biggest gains require changing the numerical method rather than the hardware.
+            </span>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- CTA -->
+  <section id="contact" class="section section--tint cta-band">
+    <div class="container">
+
+      <span class="eyebrow">Start with the bottleneck</span>
+
+      <h2 class="section-title">
+        What computation is slowing your team down?
+      </h2>
+
+      <p class="cta-band__text">
+        Bring us one slow simulation, numerical workflow, or computational
+        bottleneck. In a free 30-minute technical call, we'll discuss the
+        problem and determine whether a Computational Performance Audit is
+        the right next step.
+      </p>
+
+      <a
+        class="btn btn--primary btn--lg"
+        data-book
+        data-cta="audit-contact"
+      >
+        Discuss your workload
+      </a>
+
+      <p class="cta-band__alt">
+        Prefer email? Write to
+        <a
+          href="mailto:info@opennumerics.com"
+          data-cta="audit-email"
+        >
+          info@opennumerics.com
+        </a>.
+      </p>
+
+      <img
+        src="/images/Open_Numerics_Banner.png"
+        alt="Open Numerics"
+        class="contact-logo"
+      />
+
+    </div>
+  </section>
+
+
+  <footer class="footer">
+
+    <nav class="footer__links">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/privacy.html">Privacy</a>
+      <a href="mailto:info@opennumerics.com">info@opennumerics.com</a>
+    </nav>
+
+    <p>
+      ©
+      <script>
+        document.write(new Date().getFullYear())
+      </script>
+      Open Numerics, LLC
+    </p>
+
+  </footer>
+
+  <script src="/site.js"></script>
+
+</body>
+</html>

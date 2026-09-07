@@ -371,6 +371,10 @@ strong { color: inherit; font-weight: 700; }
   gap: 1.5rem;
 }
 
+.offers--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .offer {
   display: flex;
   flex-direction: column;

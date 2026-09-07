@@ -375,6 +375,18 @@ strong { color: inherit; font-weight: 700; }
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+@media (max-width: 1000px) {
+  .offers--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .offers--three {
+    grid-template-columns: 1fr;
+  }
+}
+
 .offer {
   display: flex;
   flex-direction: column;

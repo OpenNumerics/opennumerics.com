@@ -48,12 +48,8 @@
 
       <h1>
         Find out why your
-        <span class="accent-gold">scientific code is slow.</span>
+        <span class="accent-gold">computational code is slow.</span>
       </h1>
-
-      <p class="hero__lead">
-        More compute is not always the answer.
-      </p>
 
       <p class="hero__sub">
         We benchmark and profile one computational workload, identify the
@@ -83,7 +79,7 @@
         <li>Measured bottlenecks</li>
         <li>Prioritized recommendations</li>
         <li>Clear implementation options</li>
-        <li>A report your team can keep</li>
+        <li>A report your team can build on</li>
       </ul>
 
     </div>
@@ -105,13 +101,12 @@
           Slow computational workflows can have very different causes.
           The expensive part might be a Python loop, memory access, CPU-GPU
           communication, an inefficient solver, excessive I/O, poor parallel
-          scaling, or an algorithm that simply performs more computation than
-          necessary.
+          scaling, or an inefficient algorithm.
         </p>
 
         <p class="section-sub">
           The purpose of the Computational Performance Audit is to measure the
-          real bottleneck first, then determine what is actually worth changing.
+          real bottleneck first, then propose the change.
         </p>
       </div>
 
@@ -120,9 +115,6 @@
         <article class="offer">
           <span class="offer__tag">Software</span>
           <h3>Implementation bottlenecks</h3>
-          <p class="offer__promise">
-            The algorithm may be fine. The implementation may not be.
-          </p>
           <ul class="offer__list">
             <li>Python loops and interpreter overhead</li>
             <li>Poor memory-access patterns</li>
@@ -134,9 +126,6 @@
         <article class="offer">
           <span class="offer__tag">Hardware</span>
           <h3>Scaling bottlenecks</h3>
-          <p class="offer__promise">
-            More cores or GPUs only help if the workload can use them.
-          </p>
           <ul class="offer__list">
             <li>CPU and GPU utilization</li>
             <li>Parallel scaling</li>
@@ -148,9 +137,6 @@
         <article class="offer">
           <span class="offer__tag">Numerics</span>
           <h3>Algorithmic bottlenecks</h3>
-          <p class="offer__promise">
-            Sometimes the biggest speedup comes from changing the computation.
-          </p>
           <ul class="offer__list">
             <li>Solver choice and convergence</li>
             <li>Numerical formulation</li>
@@ -177,10 +163,8 @@
         </h2>
 
         <p class="section-sub">
-          The audit does not end with profiler output or a verbal recommendation.
-          We turn the analysis into a technical document your team can use to
-          decide what to fix, what to postpone, and what may justify a larger
-          engineering effort.
+          We create a technical document that your team can build on.
+          It contains what to fix, how Open Numerics can help, and how to justify the larger engineering effort.
         </p>
       </div>
 
@@ -278,76 +262,9 @@
   </section>
 
 
-  <!-- Example recommendation format -->
-  <section class="section section--tint">
-    <div class="container">
-
-      <div class="section-head">
-        <span class="eyebrow">Actionable recommendations</span>
-
-        <h2 class="section-title">
-          Every finding should lead to a decision.
-        </h2>
-
-        <p class="section-sub">
-          Recommendations are not generic optimization advice. Each one ties a
-          measured problem to a concrete intervention, expected impact, and
-          implementation path.
-        </p>
-      </div>
-
-      <div class="offers">
-
-        <article class="offer offer--primary">
-          <span class="offer__tag">Example finding</span>
-
-          <h3>Memory-bound numerical kernel</h3>
-
-          <ul class="offer__list">
-            <li><strong>Evidence:</strong> dominant runtime inside repeated array operations</li>
-            <li><strong>Impact:</strong> High</li>
-            <li><strong>Effort:</strong> Low to medium</li>
-            <li><strong>Recommendation:</strong> restructure memory access and vectorize the hot path</li>
-            <li><strong>Next step:</strong> implement and benchmark against the existing baseline</li>
-          </ul>
-        </article>
-
-        <article class="offer">
-          <span class="offer__tag">Example finding</span>
-
-          <h3>Underutilized parallel hardware</h3>
-
-          <ul class="offer__list">
-            <li><strong>Evidence:</strong> expensive operations remain effectively serial</li>
-            <li><strong>Impact:</strong> High</li>
-            <li><strong>Effort:</strong> Medium</li>
-            <li><strong>Recommendation:</strong> restructure computation for parallel or GPU execution</li>
-            <li><strong>Next step:</strong> prototype acceleration of the dominant kernels</li>
-          </ul>
-        </article>
-
-        <article class="offer offer--accent">
-          <span class="offer__tag">Example finding</span>
-
-          <h3>Repeated expensive numerical solve</h3>
-
-          <ul class="offer__list">
-            <li><strong>Evidence:</strong> repeated solver calls dominate end-to-end runtime</li>
-            <li><strong>Impact:</strong> Potentially very high</li>
-            <li><strong>Effort:</strong> High</li>
-            <li><strong>Recommendation:</strong> investigate reduced-order or learned surrogate approaches</li>
-            <li><strong>Next step:</strong> feasibility study and benchmark against the original solver</li>
-          </ul>
-        </article>
-
-      </div>
-
-    </div>
-  </section>
-
 
   <!-- Audit workflow -->
-  <section class="section">
+  <section class="section section--tint">
     <div class="container">
 
       <div class="section-head">

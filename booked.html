@@ -8,14 +8,17 @@
   <link rel="icon" href="/icons/favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="/style.css" />
 
-  <!-- Runs BEFORE consent.js, and therefore before Google Analytics loads.
+  <!-- Runs BEFORE the Umami tracker, and therefore before any pageview is sent.
 
        Cal.com's "Forward parameters" option can append the attendee's name and
-       email to this URL. GA4 records the full page_location including the query
-       string, so leaving them there would push personal data into Analytics,
-       which breaks Google's own terms. This lifts the two harmless values we
-       actually need into a variable and then wipes the query string entirely,
-       so the URL analytics sees is just /booked.html. -->
+       email to this URL. Umami records the full URL including the query string,
+       so leaving them there would push personal data into analytics — exactly
+       the thing a cookieless setup is supposed to avoid. This lifts the two
+       harmless values we actually need into a variable and then wipes the query
+       string entirely, so the URL analytics sees is just /booked.html.
+
+       The tracker script below is deferred, so it runs after this inline block
+       regardless — but keep this one first anyway, so the ordering is obvious. -->
   <script>
     (function () {
       var p = new URLSearchParams(location.search);
@@ -27,7 +30,7 @@
     })();
   </script>
 
-  <script src="/consent.js"></script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="5f9f9a7e-4bd5-4977-b692-87584d837473"></script>
 </head>
 
 <body data-page="booked">

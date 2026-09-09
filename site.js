@@ -10,7 +10,7 @@
    navbar, hero, services, contact and case-study CTAs all follow from this one
    constant. Change it here and it changes everywhere.
 
-   Events sent to GA4, all via track() so they carry a page_type of
+   Events sent to Umami, all via track() so they carry a page_type of
    home / case_study / about / privacy:
 
      book_click        a booking CTA was pressed        (location)
@@ -37,25 +37,30 @@
      Event type -> Advanced -> "Redirect on booking" ->
        https://opennumerics.com/booked.html
 
-   Mark ONLY booking_completed as a GA4 key event: Admin -> Data display ->
-   Events -> Recent events tab -> find it -> star it. It only appears there
-   after firing once, so make a test booking first and then cancel it.
+   Umami has no "key event" concept to configure: booking_completed shows up in
+   the Events panel on its own once it has fired. To see it as a conversion,
+   filter the dashboard by that event name, or read the /booked.html pageview
+   count next to it. Events only appear after firing once, so make a test
+   booking first and then cancel it.
 
-   Note: analytics only runs after a visitor accepts the consent banner (see
-   consent.js), so these numbers undercount real traffic. Fine for comparing
-   periods and funnel steps to each other; not a true visitor count.
+   Note: Umami is cookieless and needs no consent banner, so it runs for every
+   visitor. Ad blockers still block the script for some, so treat these as a
+   reliable floor rather than a complete visitor count.
 --------------------------------------------------------------------------- */
 const CAL_LINK = "hannes-vandecasteele-ttuhej/30min";
 
 /* Coarse page classification so every event can be split home vs case study
-   without relying on URL parsing in the GA4 UI. */
+   without relying on URL parsing in the Umami UI. */
 const PAGE_TYPE = document.body.dataset.page
   || (location.pathname.startsWith("/solutions/") ? "case_study" : "home");
 
-/* Safe wrapper: gtag may be blocked by an ad blocker or still loading. */
+/* Safe wrapper: window.umami may be blocked by an ad blocker, or the deferred
+   tracker script may not have run yet. Every call site fires on DOMContentLoaded
+   or later, by which point a deferred script has executed — but a missing umami
+   must never throw, since these are side-channel calls inside click handlers. */
 function track(name, params) {
-  if (typeof gtag !== "function") return;
-  gtag("event", name, Object.assign({ page_type: PAGE_TYPE }, params || {}));
+  if (typeof umami === "undefined" || typeof umami.track !== "function") return;
+  umami.track(name, Object.assign({ page_type: PAGE_TYPE }, params || {}));
 }
 
 /* ---------------------------------------------------------------------------
@@ -73,8 +78,8 @@ document.addEventListener("DOMContentLoaded", () => {
 /* The conversion ------------------------------------------------------------
    Cal.com redirects here after a slot is confirmed. The booking uid (when
    Cal.com is set to forward parameters) is lifted out of the query string by an
-   inline script in booked.html before analytics loads, and is used here only to
-   keep a refresh or a back-button from counting the same booking twice. */
+   inline script in booked.html before the tracker loads, and is used here only
+   to keep a refresh or a back-button from counting the same booking twice. */
 function trackBookingCompleted() {
   if (document.body.dataset.page !== "booked") return;
 
@@ -178,8 +183,8 @@ function initSectionViews() {
 }
 
 /* Scroll depth --------------------------------------------------------------
-   GA4 enhanced measurement only reports a single 90% event. These thresholds
-   show where visitors actually stop. */
+   Umami does not measure scrolling at all, so these thresholds are the only
+   signal for where visitors actually stop. */
 function initScrollDepth() {
   const thresholds = [25, 50, 75, 100];
   const fired = new Set();

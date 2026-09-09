@@ -759,46 +759,6 @@ strong { color: inherit; font-weight: 700; }
 }
 
 /* ---------------------------------------------------------------------------
-   Consent banner
-
-   A bottom bar, not a blocking modal — every visit to this site is supposed to
-   end at a booking CTA, and an overlay taxes all of them.
---------------------------------------------------------------------------- */
-.consent {
-  position: fixed;
-  z-index: 100;
-  left: 1.25rem;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  max-width: var(--maxw);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 1.1rem 1.4rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: 0 18px 44px -12px rgba(16, 40, 37, .35);
-}
-
-.consent__text {
-  flex: 1;
-  margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.55;
-  color: var(--muted);
-}
-
-.consent__actions {
-  display: flex;
-  gap: 0.6rem;
-  flex-shrink: 0;
-}
-
-.consent button { font-family: inherit; }
-
-/* ---------------------------------------------------------------------------
    Footer
 --------------------------------------------------------------------------- */
 .footer {
@@ -948,8 +908,4 @@ mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
   .outcomes li { padding: 0; }
   .outcomes li + li::before { display: none; }
   .figure--medium img, .figure--narrow img { max-width: 100%; }
-
-
-  .consent { flex-direction: column; align-items: stretch; gap: 1rem; }
-  .consent__actions .btn { flex: 1; text-align: center; }
 }

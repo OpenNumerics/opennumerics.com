@@ -208,18 +208,6 @@ strong { color: inherit; font-weight: 700; }
   text-wrap: balance;
 }
 
-/* Two tiers, not two paragraphs: the problem lands in ink, the answer follows
-   in muted. Splitting them costs no extra height and gives the eye an order to
-   read in — the earlier flat grey block had none. */
-.hero__lead {
-  font-size: clamp(1.2rem, 2.1vw, 1.5rem);
-  font-weight: 600;
-  color: var(--ink);
-  max-width: 740px;      /* wide enough to hold one line on desktop */
-  margin: 0 auto 0.75rem;
-  text-wrap: balance;
-}
-
 .hero__sub {
   font-size: clamp(1.05rem, 1.6vw, 1.18rem);
   color: var(--muted);
@@ -233,6 +221,13 @@ strong { color: inherit; font-weight: 700; }
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.hero__offer {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+  margin: 1.25rem 0 0;
 }
 
 /* Outcomes as one quiet line with gold separators rather than four boxed pills.

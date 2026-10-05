@@ -464,6 +464,9 @@ strong { color: inherit; font-weight: 700; }
 --------------------------------------------------------------------------- */
 .cta-band { text-align: center; }
 
+/* The consultation prompt closing the services section, not a band of its own. */
+.services__cta { margin-top: 3rem; }
+
 .cta-band__text {
   font-size: 1.15rem;
   color: var(--muted);
